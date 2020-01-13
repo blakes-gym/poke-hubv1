@@ -1,3 +1,7 @@
+import "../styles.scss"
+
 export default function Index() {
-  return <div>Heyo</div>
+  return <div className="example">Heyo</div>
 }
+
+

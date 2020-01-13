@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/blakes-gym/poke-hub#readme",
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "next": "^9.1.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
