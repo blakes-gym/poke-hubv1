@@ -1,9 +1,7 @@
-import { useState } from 'react';
+import 'bootstrap/scss/bootstrap.scss'
 
-export default function Template () {
-  return (
-    <div>
-      Test
-    </div>
-  )
+import { useState } from 'react'
+
+export default function Template() {
+  return <div>Test</div>
 }
