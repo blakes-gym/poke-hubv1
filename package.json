@@ -20,12 +20,14 @@
   },
   "homepage": "https://github.com/blakes-gym/poke-hub#readme",
   "dependencies": {
+    "@react-hook/window-size": "^1.0.12",
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4.4.1",
     "next": "^9.1.7",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-use-dimensions": "^1.2.1"
   }
 }
