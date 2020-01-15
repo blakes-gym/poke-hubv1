@@ -14,11 +14,14 @@ export default function Template({ children }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavLink href="/team-analysis" path={path}>
-              Team Analysis
-            </NavLink>
             <NavLink href="/" path={path}>
               Home
+            </NavLink>
+            <NavLink href="/wish-list" path={path}>
+              Wish List
+            </NavLink>
+            <NavLink href="/team-analysis" path={path}>
+              Team Analysis
             </NavLink>
           </Nav>
         </Navbar.Collapse>
