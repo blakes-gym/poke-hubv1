@@ -1,4 +1,4 @@
-import { withApollo } from '../lib/apollo'
+import { withApollo } from '../graphql/apollo'
 
 import Template from '../components/Template'
 
