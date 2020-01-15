@@ -13,7 +13,7 @@ export default function Template({ children }) {
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav className="ml-auto">
             <NavLink href="/" path={path}>
               Home
             </NavLink>
@@ -32,15 +32,15 @@ export default function Template({ children }) {
 }
 
 function NavLink({ children, href, path }) {
-  console.log(path, href)
+  const classes = ['nav-link', 'ml-auto']
   return (
     <Link href={href}>
       {path === href ? (
-        <a className="active nav-link">
+        <a className={'active ' + classes.join(' ')}>
           <u>{children}</u>
         </a>
       ) : (
-        <a className="nav-link">{children}</a>
+        <a className={classes.join(' ')}>{children}</a>
       )}
     </Link>
   )
