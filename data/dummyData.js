@@ -210,5 +210,111 @@ export default [
         PP: 10
       }
     ]
+  },
+  {
+    DexNo: 295,
+    Name: 'Exploud',
+    Type: ['Normal'],
+    Stats: {
+      HP: 104,
+      Attack: 91,
+      Defense: 63,
+      'Sp. Atk': 91,
+      'Sp. Def': 63,
+      Speed: 68,
+      Total: 480
+    },
+    Sprite: 'https://cdn.bulbagarden.net/upload/1/12/295Exploud.png',
+    Moves: [
+      {
+        Level: 58,
+        Move: 'Boomburst',
+        Type: 'Normal',
+        Cat: 'Special',
+        Power: 140,
+        Acc: 100,
+        PP: 10
+      },
+      {
+        Level: 36,
+        Move: 'Rest',
+        Type: 'Psychic',
+        Cat: 'Status',
+        Power: null,
+        Acc: null,
+        PP: 10
+      },
+      {
+        Level: 27,
+        Move: 'Uproar',
+        Type: 'Normal',
+        Cat: 'Special',
+        Power: 90,
+        Acc: 100,
+        PP: 10
+      },
+      {
+        Level: 53,
+        Move: 'Synchronoise',
+        Type: 'Normal',
+        Cat: 'Special',
+        Power: 120,
+        Acc: 100,
+        PP: 10
+      }
+    ]
+  },
+  {
+    DexNo: 106,
+    Name: 'Hitmonlee',
+    Type: ['Fighting'],
+    Stats: {
+      HP: 50,
+      Attack: 120,
+      Defense: 53,
+      'Sp. Atk': 35,
+      'Sp. Def': 110,
+      Speed: 87,
+      Total: 455
+    },
+    Sprite: 'https://cdn.bulbagarden.net/upload/3/32/106Hitmonlee.png',
+    Moves: [
+      {
+        Level: 4,
+        Move: 'Double Kick',
+        Type: 'Fighting',
+        Cat: 'Physical',
+        Power: 30,
+        Acc: 100,
+        PP: 30
+      },
+      {
+        Level: 32,
+        Move: 'Mega Kick',
+        Type: 'Normal',
+        Cat: 'Physical',
+        Power: 120,
+        Acc: 75,
+        PP: 5
+      },
+      {
+        Level: 36,
+        Move: 'Close Combat',
+        Type: 'Fighting',
+        Cat: 'Physical',
+        Power: 120,
+        Acc: 100,
+        PP: 5
+      },
+      {
+        Level: 21,
+        Move: 'Wide Guard',
+        Type: 'Rock',
+        Cat: 'Status',
+        Power: null,
+        Acc: null,
+        PP: 10
+      }
+    ]
   }
 ];
