@@ -6,9 +6,9 @@ export default function PokemonRow({ pokemon }) {
   return (
     <Card>
       <Card.Header>
-        #{pokemon.DexNo} {pokemon.Name}
+        <b>#{pokemon.DexNo}</b> {pokemon.Name}
       </Card.Header>
-      <Card.Img variant='' />
+      <Card.Img variant='middle' src={pokemon.Img} />
       <Card.Title>Stats</Card.Title>
       <Card.Text>
         <StatList stats={pokemon.Stats} />
