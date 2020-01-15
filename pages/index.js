@@ -1,12 +1,15 @@
-import "../styles.scss";
 import Template from '../components/Template.js';
+import Window from '../components/page-1-home/Window.js';
+import Mobile from '../components/page-1-home/Mobile.js'
+
 
 export default function Index() {
+  // const [width, height] = useWindowSize();
+
   return (
-    <Template>
-      <div className="example">Heyo</div>
-    </Template>
+    <div>
+      <Mobile />
+      <Window />
+    </div>
   )
 }
-
-
