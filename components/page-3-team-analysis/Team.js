@@ -18,6 +18,7 @@ export default function Team () {
     <Accordion.Toggle as={Card.Header} eventKey={`${idx}`}>
     <div className="accordianList">
     <div style={{backgroundImage: `url(${pokemon.Sprite})`, backgroundSize: 'cover', zIndex: '1'}} className="miniPokemonSprite"></div>
+    <div className="pokemonTeamBackground"></div>
     <div>{pokemon.Name}</div>
     {
       pokemon.Type.map((type, idx) => {

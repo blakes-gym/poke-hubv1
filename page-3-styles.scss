@@ -17,6 +17,14 @@
     justify-content: flex-start;
   }
 
+  .pokemonTeamBackground {
+    width: 200px;
+    height: 200px;
+    background-image: url(https://www.freeiconspng.com/uploads/pokeball-pokemon-ball-png-images-4.png);
+    background-size: cover;
+    position: absolute;
+  }
+
 // .page3Container {
 //   display: flex;
 //   align-items: center;
