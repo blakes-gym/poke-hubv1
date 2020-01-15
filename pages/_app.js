@@ -1,5 +1,4 @@
 import { withApollo } from '../lib/apollo'
-
 import Template from '../components/Template'
 
 function _App({ Component, pageProps }) {

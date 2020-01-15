@@ -22,18 +22,19 @@
   "dependencies": {
     "@apollo/react-hooks": "3.0.0",
     "@apollo/react-ssr": "3.0.0",
+    "@zeit/next-sass": "^1.0.1",
     "apollo-cache-inmemory": "1.6.3",
     "apollo-client": "2.6.4",
     "apollo-link-http": "1.5.15",
-    "@zeit/next-sass": "^1.0.1",
+    "bootstrap": "^4.4.1",
     "graphql": "^14.0.2",
     "graphql-tag": "2.10.1",
     "isomorphic-unfetch": "^3.0.0",
-    "bootstrap": "^4.4.1",
     "next": "^9.1.7",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "recharts": "^2.0.0-beta.1"
   }
 }
