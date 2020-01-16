@@ -1,28 +1,28 @@
-import Table from 'react-bootstrap/Table';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+// import Table from 'react-bootstrap/Table';
+// import Card from 'react-bootstrap/Card';
+// import Button from 'react-bootstrap/Button';
 import Data from '../../data/dummyData.js';
-import hexData from '../../hexData';
-import Stats from './MStatsTable.js';
+// import hexData from '../../hexData';
+// import Stats from './Stats.js';
+// import {FaPlus} from 'react-icons/fa';
+// import { useSpring, animated, interpolate } from 'react-spring';
+// import { useGesure } from 'react-with-gesture';
+import Card from './Card';
 // import { AiOutlineSearch } from 'react-icons/ai';
+
+// http://poke-hub-backend.herokuapp.com/api/pokemon
+// THIS IS TO GET ALL
 
 export default function Mobile () {
   return (
     <div className="d-sm-none">
       {Data.map((pokemon, index) => (
-        <Card key={index} style={{width: '50%'}}>
-          <Card.Img src={pokemon.Sprite} align='left' style={{  width: '80%', height: 'auto', display: 'inline', marginRight: 'auto'}} />
-          <Card.Body>
-            <Card.Title>{pokemon.Name}</Card.Title>
-            <Button style={{margin: 5}} size="small" variant="outline-primary">Moves</Button>
-            <Button style={{margin: 5}} size="small" variant="outline-primary">Summary</Button>
-            <div>{pokemon.Type.map((type, index) => (<div key={index} style={{margin: 5, width: '20%', backgroundColor: hexData[type], color:'white', textAlign: 'center'}}>{type}</div>))}</div>
-          </Card.Body>
-        </Card>
+        <Card key={pokemon.DexNo} pokemon={pokemon} />
       ))}
     </div>
   )
 }
+
 
         {/* <AiOutlineSearch style={{position: 'fixed', height:'15%', width:'15%', bottom: -20, right: 10}}/> */}
 

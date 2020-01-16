@@ -56,7 +56,9 @@ export default function TeamMember({
                 width: 'auto',
                 opacity: 0.5
               }}
-              className="rotate"
+              className={['rotate', open ? 'rotate-end' : 'rotate-start'].join(
+                ' '
+              )}
             />
           </div>
         </div>
@@ -85,17 +87,15 @@ export default function TeamMember({
       </Collapse>
       <style jsx>{`
         .rotate {
-          animation-name: rotate;
-          animation-duration: 5s;
+          transition: transform 0.2s;
         }
 
-        @keyframes rotate {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(180deg);
-          }
+        .rotate-start {
+          transform: rotateX(0deg);
+        }
+
+        .rotate-end {
+          transform: rotateX(180deg);
         }
       `}</style>
     </>
