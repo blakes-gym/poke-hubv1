@@ -1,4 +1,5 @@
-let HexByType = { Normal: 'A8A77A',
+let HexByType = {
+Normal: '#A8A77A',
 Fire: '#EE8130',
 Water: '#6390F0',
 Electric: '#F7D02C',

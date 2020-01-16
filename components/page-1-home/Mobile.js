@@ -3,22 +3,29 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Data from '../../data/dummyData.js';
 import hexData from '../../hexData';
-import Stats from './MStatsTable.js';
+import Stats from './Stats.js';
 // import { AiOutlineSearch } from 'react-icons/ai';
+
+// http://poke-hub-backend.herokuapp.com/api/pokemon
+// THIS IS TO GET ALL
 
 export default function Mobile () {
   return (
     <div className="d-sm-none">
       {Data.map((pokemon, index) => (
-        <Card key={index} style={{width: '50%'}}>
-          <Card.Img src={pokemon.Sprite} align='left' style={{  width: '80%', height: 'auto', display: 'inline', marginRight: 'auto'}} />
-          <Card.Body>
-            <Card.Title>{pokemon.Name}</Card.Title>
-            <Button style={{margin: 5}} size="small" variant="outline-primary">Moves</Button>
-            <Button style={{margin: 5}} size="small" variant="outline-primary">Summary</Button>
-            <div>{pokemon.Type.map((type, index) => (<div key={index} style={{margin: 5, width: '20%', backgroundColor: hexData[type], color:'white', textAlign: 'center'}}>{type}</div>))}</div>
-          </Card.Body>
-        </Card>
+        <div key={index} className="cardContainer" style={{background: `linear-gradient(30deg, ${hexData[pokemon.Type[0]]} 0%, ${hexData[pokemon.Type[1]] || ''} 51%, rgba(255,255,255,1) 100%)`}}>
+          <div className="pokemonBackground"></div>
+          <div style={{flex: 4, display:'flex', flexDirection: 'column', alignItems: 'center', zIndex: 1}}>
+            <img src={pokemon.Sprite} style={{width: '80%', margin: 5}} />
+            <div>{pokemon.Name}</div>
+            <div className="Damion">12</div>
+          </div>
+          <div style={{flex: 5, overflow: 'hidden'}}>
+            <Stats stats={pokemon.Stats} type={pokemon.Type}/>
+          </div>
+          <div style={{flex: 1}}>
+          </div>
+        </div>
       ))}
     </div>
   )
