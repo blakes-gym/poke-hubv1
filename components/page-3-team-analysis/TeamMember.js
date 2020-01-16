@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import Gradient from '../Gradient'
 import { Collapse } from 'react-bootstrap'
+import images from '../../utils/imageUrls'
 
 export default function TeamMember({
   name,
@@ -49,7 +50,7 @@ export default function TeamMember({
             className="text-muted d-flex justify-content-center align-items-center mr-2"
           >
             <img
-              src="https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/1915417671530177260-128.png"
+              src={images.arrow}
               style={{
                 height: 24,
                 width: 'auto',
