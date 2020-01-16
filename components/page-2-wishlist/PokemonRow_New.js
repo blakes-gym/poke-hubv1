@@ -6,15 +6,28 @@ import data from '../../data/dummyData.js';
 
 export default function PokemonRow_New() {
   return (
-    <Accordion>
-      {data.map((pokemon, idx) => {
-        return (
-          <Card key={idx}>
-            <PokemonBanner idx={idx} pokemon={pokemon} />
-            <CollapseData idx={idx} pokemon={pokemon} />
-          </Card>
-        );
-      })}
-    </Accordion>
+    <div>
+      <Accordion>
+        {data.map((pokemon, idx) => {
+          return (
+            <Card key={idx}>
+              <div className='d-flex'>
+                <PokemonBanner idx={idx} pokemon={pokemon} />
+                <div
+                  className={''}
+                  style={{
+                    'background-color': 'lightgrey',
+                    'text-align': 'center'
+                  }}
+                >
+                  Hello
+                </div>
+              </div>
+              <CollapseData idx={idx} pokemon={pokemon} />
+            </Card>
+          );
+        })}
+      </Accordion>
+    </div>
   );
 }
