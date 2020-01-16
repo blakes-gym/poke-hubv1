@@ -1,12 +1,16 @@
+import '../components/page-2-wishlist/page-2-styles.scss';
 import pokemonData from '../data/dummyData.js';
-import PokemonRow from '../components/page-2-wishlist/PokemonRow.js';
+import PokemonRow from '../components/page-2-wishlist/PokemonRow_New.js';
 
 export default function Wishlist() {
   return (
     <div>
-      {pokemonData.map((pokemon, index) => {
-        return <PokemonRow pokemon={pokemon} key={index} />;
-      })}
+      <PokemonRow pokemon={pokemonData} />
     </div>
+    // <div>
+    //   {pokemonData.map((pokemon, index) => {
+    //     return <PokemonRow pokemon={pokemon} key={index} />;
+    //   })}
+    // </div>
   );
 }
