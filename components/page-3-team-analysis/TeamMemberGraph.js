@@ -20,7 +20,7 @@ export default function TeamMemberGraph ({ stats }) {
   }
 
   return (
-    <RadarChart outerRadius={80} width={730} height={250} data={pokemonStats}>
+    <RadarChart outerRadius={80} width={250} height={250} data={pokemonStats}>
   <PolarGrid />
   <PolarAngleAxis dataKey="stat"/>
   <PolarRadiusAxis angle={60} domain={[0, (maxVal + 20)]} />

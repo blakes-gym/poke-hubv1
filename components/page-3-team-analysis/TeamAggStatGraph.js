@@ -76,6 +76,6 @@ export default function TeamAggStatGraph ({ data }) {
     <PolarRadiusAxis angle={30} domain={[0, (maxVal + 20)]} />
     <Radar name="Aggregate" dataKey="value" stroke="#FFFFFF" fill="#FFFFFF" fillOpacity={0.6} />
     <Legend />
-  </RadarChart>
+    </RadarChart>
   )
 }
