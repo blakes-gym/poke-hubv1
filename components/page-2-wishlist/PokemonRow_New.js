@@ -11,7 +11,11 @@ export default function PokemonRow_New({ pokemonData }) {
           return (
             <Card key={idx}>
               <PokemonBanner idx={idx} pokemon={pokemon} />
-              <CollapseData idx={idx} pokemon={pokemon} />
+              <CollapseData
+                idx={idx}
+                pokemon={pokemon}
+                allPokemon={pokemonData}
+              />
             </Card>
           );
         })}
