@@ -6,31 +6,31 @@ export default function TeamMemberData({ pokemon }) {
       <tbody>
         <tr>
           <td>HP</td>
-          <td>{pokemon.stats.hp}</td>
+          <td>{pokemon.hp}</td>
         </tr>
         <tr>
           <td>Attack</td>
-          <td>{pokemon.stats.attack}</td>
+          <td>{pokemon.atk}</td>
         </tr>
         <tr>
           <td>Defense</td>
-          <td>{pokemon.stats.defense}</td>
+          <td>{pokemon.def}</td>
         </tr>
         <tr>
           <td>Sp. Atk</td>
-          <td>{pokemon.stats.spAtk}</td>
+          <td>{pokemon.spatk}</td>
         </tr>
         <tr>
           <td>Sp. Def</td>
-          <td>{pokemon.stats.spDef}</td>
+          <td>{pokemon.spdef}</td>
         </tr>
         <tr>
           <td>Speed</td>
-          <td>{pokemon.stats.speed}</td>
+          <td>{pokemon.speed}</td>
         </tr>
         <tr>
           <td>Total</td>
-          <td>{pokemon.stats.total}</td>
+          <td>{pokemon.total}</td>
         </tr>
       </tbody>
     </Table>
