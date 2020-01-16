@@ -11,18 +11,7 @@ export default function PokemonRow_New() {
         {data.map((pokemon, idx) => {
           return (
             <Card key={idx}>
-              <div className='d-flex'>
-                <PokemonBanner idx={idx} pokemon={pokemon} />
-                <div
-                  className={''}
-                  style={{
-                    'background-color': 'lightgrey',
-                    'text-align': 'center'
-                  }}
-                >
-                  Hello
-                </div>
-              </div>
+              <PokemonBanner idx={idx} pokemon={pokemon} />
               <CollapseData idx={idx} pokemon={pokemon} />
             </Card>
           );

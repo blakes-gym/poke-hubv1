@@ -29,29 +29,39 @@ export default function PokemonBanner({ pokemon, idx }) {
       <Accordion.Toggle as={Card.Header} eventKey={`${idx}`}>
         {/* <div className='d-flex align-items-center'> */}
         <div className='accordianList'>
-          <div
-            style={{
-              backgroundImage: `url(${pokemon.Sprite})`,
-              backgroundSize: 'cover',
-              zIndex: '1'
-            }}
-            className='miniPokemonSprite'
-          ></div>
-          <div>{pokemon.Name}</div>
-          {pokemon.Type.map((type, idx) => {
-            return (
-              <Badge
-                style={{
-                  background: HexByType[type],
-                  marginLeft: '2px',
-                  margin: '2px'
-                }}
-                key={idx}
-              >
-                {type}
-              </Badge>
-            );
-          })}
+          <div className='d-flex align-items-center'>
+            <div
+              style={{
+                backgroundImage: `url(${pokemon.Sprite})`,
+                backgroundSize: 'cover',
+                zIndex: '1'
+              }}
+              className='miniPokemonSprite'
+            ></div>
+            <div>{pokemon.Name}</div>
+            {pokemon.Type.map((type, idx) => {
+              return (
+                <Badge
+                  style={{
+                    background: HexByType[type],
+                    marginLeft: '2px',
+                    margin: '2px'
+                  }}
+                  key={idx}
+                >
+                  {type}
+                </Badge>
+              );
+            })}
+          </div>
+          <div className={'ml-auto align-item-center'}>
+            <img
+              className='add-button'
+              src='https://image.flaticon.com/icons/svg/748/748113.svg'
+              width='20'
+              height='20'
+            ></img>
+          </div>
         </div>
         {/* </div> */}
       </Accordion.Toggle>
