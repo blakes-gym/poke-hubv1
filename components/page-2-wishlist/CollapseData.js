@@ -9,7 +9,7 @@ export default function CollapseData({ pokemon, idx }) {
       <Card.Body>
         <div className='dataContainer'>
           <PokemonStats pokemon={pokemon}></PokemonStats>
-          <StatsGraph stats={pokemon.Stats}></StatsGraph>
+          <StatsGraph stats={pokemon.stats}></StatsGraph>
         </div>
       </Card.Body>
     </Accordion.Collapse>

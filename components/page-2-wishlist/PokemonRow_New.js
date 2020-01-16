@@ -2,13 +2,12 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import PokemonBanner from './PokemonBanner.js';
 import CollapseData from './CollapseData.js';
-import data from '../../data/dummyData.js';
 
-export default function PokemonRow_New() {
+export default function PokemonRow_New({ pokemonData }) {
   return (
     <div>
       <Accordion>
-        {data.map((pokemon, idx) => {
+        {pokemonData.pokemon.map((pokemon, idx) => {
           return (
             <Card key={idx}>
               <PokemonBanner idx={idx} pokemon={pokemon} />

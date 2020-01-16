@@ -1,320 +1,282 @@
-export default [
-  {
-    DexNo: 93,
-    Name: 'Haunter',
-    Type: ['Ghost', 'Poison'],
-    Stats: {
-      HP: 45,
-      Attack: 50,
-      Defense: 45,
-      'Sp. Atk': 115,
-      'Sp. Def': 55,
-      Speed: 95,
-      Total: 405
+export default {
+  pokemon: [
+    {
+      dexNo: 93,
+      name: 'Haunter',
+      type: ['Ghost', 'Poison'],
+      stats: {
+        hp: 45,
+        attack: 50,
+        defense: 45,
+        spAtk: 115,
+        spDef: 55,
+        speed: 95,
+        total: 405
+      },
+      sprite: 'https://cdn.bulbagarden.net/upload/6/62/093Haunter.png'
     },
-    Sprite: 'https://cdn.bulbagarden.net/upload/6/62/093Haunter.png',
-    Moves: [
-      {
-        Level: 12,
-        Move: 'Payback',
-        Type: 'Dark',
-        Cat: 'Physical',
-        Power: 50,
-        Acc: 100,
-        PP: 10
+    {
+      dexNo: 5,
+      name: 'Charmeleon',
+      type: ['Fire'],
+      stats: {
+        hp: 58,
+        attack: 64,
+        defense: 58,
+        spAtk: 80,
+        spDef: 65,
+        speed: 80,
+        total: 405
       },
-      {
-        Level: 24,
-        Move: 'Hex',
-        Type: 'Ghost',
-        Cat: 'Special',
-        Power: 65,
-        Acc: 100,
-        PP: 10
-      },
-      {
-        Level: 36,
-        Move: 'Sucker Punch',
-        Type: 'Dark',
-        Cat: 'Physical',
-        Power: 70,
-        Acc: 100,
-        PP: 5
-      },
-      {
-        Level: 54,
-        Move: 'Destiny Bond',
-        Type: 'Ghost',
-        Cat: 'Status',
-        Power: null,
-        Acc: null,
-        PP: 5
-      }
-    ]
-  },
-  {
-    DexNo: 5,
-    Name: 'Charmeleon',
-    Type: ['Fire'],
-    Stats: {
-      HP: 58,
-      Attack: 64,
-      Defense: 58,
-      'Sp. Atk': 80,
-      'Sp. Def': 65,
-      Speed: 80,
-      Total: 405
+      sprite: 'https://cdn.bulbagarden.net/upload/4/4a/005Charmeleon.png'
     },
-    Sprite: 'https://cdn.bulbagarden.net/upload/4/4a/005Charmeleon.png',
-    Moves: [
-      {
-        Level: 1,
-        Move: 'Ember',
-        Type: 'Fire',
-        Cat: 'Special',
-        Power: 40,
-        Acc: 100,
-        PP: 25
+    {
+      dexNo: 220,
+      name: 'Swinub',
+      type: ['Ice', 'Ground'],
+      stats: {
+        hp: 50,
+        attack: 50,
+        defense: 40,
+        spAtk: 30,
+        spDef: 30,
+        speed: 50,
+        total: 250
       },
-      {
-        Level: 19,
-        Move: 'Fire Fang',
-        Type: 'Fire',
-        Cat: 'Physical',
-        Power: 65,
-        Acc: 95,
-        PP: 15
-      },
-      {
-        Level: 12,
-        Move: 'Dragon Breath',
-        Type: 'Dragon',
-        Cat: 'Special',
-        Power: 60,
-        Acc: 100,
-        PP: 20
-      },
-      {
-        Level: 1,
-        Move: 'Smokescreen',
-        Type: 'Normal',
-        Cat: 'Status',
-        Power: null,
-        Acc: 100,
-        PP: 20
-      }
-    ]
-  },
-  {
-    DexNo: 220,
-    Name: 'Swinub',
-    Type: ['Ice', 'Ground'],
-    Stats: {
-      HP: 50,
-      Attack: 50,
-      Defense: 40,
-      'Sp. Atk': 30,
-      'Sp. Def': 30,
-      Speed: 50,
-      Total: 250
+      sprite: 'https://cdn.bulbagarden.net/upload/b/b5/220Swinub.png'
     },
-    Sprite: 'https://cdn.bulbagarden.net/upload/b/b5/220Swinub.png',
-    Moves: [
-      {
-        Level: 1,
-        Move: 'Mud-Slap',
-        Type: 'Normal',
-        Cat: 'Physical',
-        Power: 40,
-        Acc: 100,
-        PP: 35
+    {
+      dexNo: 329,
+      name: 'Vibrava',
+      type: ['Ground', 'Dragon'],
+      stats: {
+        hp: 50,
+        attack: 70,
+        defense: 50,
+        spAtk: 50,
+        spDef: 50,
+        speed: 70,
+        total: 340
       },
-      {
-        Level: 30,
-        Move: 'Icy Wind',
-        Type: 'Ice',
-        Cat: 'Special',
-        Power: 55,
-        Acc: 95,
-        PP: 15
-      },
-      {
-        Level: 20,
-        Move: 'Mist',
-        Type: 'Ice',
-        Cat: 'Status',
-        Power: null,
-        Acc: null,
-        PP: 30
-      },
-      {
-        Level: 45,
-        Move: 'Earthquake',
-        Type: 'Ground',
-        Cat: 'Physical',
-        Power: 100,
-        Acc: 100,
-        PP: 10
-      }
-    ]
-  },
-  {
-    DexNo: 329,
-    Name: 'Vibrava',
-    Type: ['Ground', 'Dragon'],
-    Stats: {
-      HP: 50,
-      Attack: 70,
-      Defense: 50,
-      'Sp. Atk': 50,
-      'Sp. Def': 50,
-      Speed: 70,
-      Total: 340
+      sprite: 'https://cdn.bulbagarden.net/upload/a/af/329Vibrava.png'
     },
-    Sprite: 'https://cdn.bulbagarden.net/upload/a/af/329Vibrava.png',
-    Moves: [
-      {
-        Level: 62,
-        Move: 'Boomburst',
-        Type: 'Normal',
-        Cat: 'Special',
-        Power: 140,
-        Acc: 100,
-        PP: 10
+    {
+      dexNo: 295,
+      name: 'Exploud',
+      type: ['Normal'],
+      stats: {
+        hp: 104,
+        attack: 91,
+        defense: 63,
+        spAtk: 91,
+        spDef: 63,
+        speed: 68,
+        total: 480
       },
-      {
-        Level: 28,
-        Move: 'Bug Buzz',
-        Type: 'Bug',
-        Cat: 'Special',
-        Power: 90,
-        Acc: 100,
-        PP: 10
-      },
-      {
-        Level: 32,
-        Move: 'Sandstorm',
-        Type: 'Rock',
-        Cat: 'Status',
-        Power: null,
-        Acc: null,
-        PP: 10
-      },
-      {
-        Level: 56,
-        Move: 'Dragon Rush',
-        Type: 'Dragon',
-        Cat: 'Physical',
-        Power: 100,
-        Acc: 75,
-        PP: 10
-      }
-    ]
-  },
-  {
-    DexNo: 295,
-    Name: 'Exploud',
-    Type: ['Normal'],
-    Stats: {
-      HP: 104,
-      Attack: 91,
-      Defense: 63,
-      'Sp. Atk': 91,
-      'Sp. Def': 63,
-      Speed: 68,
-      Total: 480
+      sprite: 'https://cdn.bulbagarden.net/upload/1/12/295Exploud.png'
     },
-    Sprite: 'https://cdn.bulbagarden.net/upload/1/12/295Exploud.png',
-    Moves: [
-      {
-        Level: 58,
-        Move: 'Boomburst',
-        Type: 'Normal',
-        Cat: 'Special',
-        Power: 140,
-        Acc: 100,
-        PP: 10
+    {
+      dexNo: 106,
+      name: 'Hitmonlee',
+      type: ['Fighting'],
+      stats: {
+        hp: 50,
+        attack: 120,
+        defense: 53,
+        spAtk: 35,
+        spDef: 110,
+        speed: 87,
+        total: 455
       },
-      {
-        Level: 36,
-        Move: 'Rest',
-        Type: 'Psychic',
-        Cat: 'Status',
-        Power: null,
-        Acc: null,
-        PP: 10
-      },
-      {
-        Level: 27,
-        Move: 'Uproar',
-        Type: 'Normal',
-        Cat: 'Special',
-        Power: 90,
-        Acc: 100,
-        PP: 10
-      },
-      {
-        Level: 53,
-        Move: 'Synchronoise',
-        Type: 'Normal',
-        Cat: 'Special',
-        Power: 120,
-        Acc: 100,
-        PP: 10
-      }
-    ]
-  },
-  {
-    DexNo: 106,
-    Name: 'Hitmonlee',
-    Type: ['Fighting'],
-    Stats: {
-      HP: 50,
-      Attack: 120,
-      Defense: 53,
-      'Sp. Atk': 35,
-      'Sp. Def': 110,
-      Speed: 87,
-      Total: 455
+      sprite: 'https://cdn.bulbagarden.net/upload/3/32/106Hitmonlee.png'
+    }
+  ],
+  moves: [
+    {
+      move: 'Payback',
+      type: 'Dark',
+      cat: 'Physical',
+      power: 50,
+      acc: 100,
+      pp: 10
     },
-    Sprite: 'https://cdn.bulbagarden.net/upload/3/32/106Hitmonlee.png',
-    Moves: [
-      {
-        Level: 4,
-        Move: 'Double Kick',
-        Type: 'Fighting',
-        Cat: 'Physical',
-        Power: 30,
-        Acc: 100,
-        PP: 30
-      },
-      {
-        Level: 32,
-        Move: 'Mega Kick',
-        Type: 'Normal',
-        Cat: 'Physical',
-        Power: 120,
-        Acc: 75,
-        PP: 5
-      },
-      {
-        Level: 36,
-        Move: 'Close Combat',
-        Type: 'Fighting',
-        Cat: 'Physical',
-        Power: 120,
-        Acc: 100,
-        PP: 5
-      },
-      {
-        Level: 21,
-        Move: 'Wide Guard',
-        Type: 'Rock',
-        Cat: 'Status',
-        Power: null,
-        Acc: null,
-        PP: 10
-      }
-    ]
-  }
-];
+    {
+      move: 'Hex',
+      type: 'Ghost',
+      cat: 'Special',
+      power: 65,
+      acc: 100,
+      pp: 10
+    },
+    {
+      move: 'Sucker Punch',
+      type: 'Dark',
+      cat: 'Physical',
+      power: 70,
+      acc: 100,
+      pp: 5
+    },
+    {
+      move: 'Destiny Bond',
+      type: 'Ghost',
+      cat: 'Status',
+      power: null,
+      acc: null,
+      pp: 5
+    },
+    {
+      move: 'Double Kick',
+      type: 'Fighting',
+      cat: 'Physical',
+      power: 30,
+      acc: 100,
+      pp: 30
+    },
+    {
+      move: 'Mega Kick',
+      type: 'Normal',
+      cat: 'Physical',
+      power: 120,
+      acc: 75,
+      pp: 5
+    },
+    {
+      move: 'Close Combat',
+      type: 'Fighting',
+      cat: 'Physical',
+      power: 120,
+      acc: 100,
+      pp: 5
+    },
+    {
+      move: 'Wide Guard',
+      type: 'Rock',
+      cat: 'Status',
+      power: null,
+      acc: null,
+      pp: 10
+    },
+    {
+      move: 'Boomburst',
+      type: 'Normal',
+      cat: 'Special',
+      power: 140,
+      acc: 100,
+      pp: 10
+    },
+    {
+      move: 'Rest',
+      type: 'Psychic',
+      cat: 'Status',
+      power: null,
+      acc: null,
+      pp: 10
+    },
+    {
+      move: 'Uproar',
+      type: 'Normal',
+      cat: 'Special',
+      power: 90,
+      acc: 100,
+      pp: 10
+    },
+    {
+      move: 'Synchronoise',
+      type: 'Normal',
+      cat: 'Special',
+      power: 120,
+      acc: 100,
+      pp: 10
+    },
+    {
+      move: 'Bug Buzz',
+      type: 'Bug',
+      cat: 'Special',
+      power: 90,
+      acc: 100,
+      pp: 10
+    },
+    {
+      move: 'Sandstorm',
+      type: 'Rock',
+      cat: 'Status',
+      power: null,
+      acc: null,
+      pp: 10
+    },
+    {
+      move: 'Dragon Rush',
+      type: 'Dragon',
+      cat: 'Physical',
+      power: 100,
+      acc: 75,
+      pp: 10
+    },
+    {
+      move: 'Mud-Slap',
+      type: 'Normal',
+      cat: 'Physical',
+      power: 40,
+      acc: 100,
+      pp: 35
+    },
+    {
+      move: 'Icy Wind',
+      type: 'Ice',
+      cat: 'Special',
+      power: 55,
+      acc: 95,
+      pp: 15
+    },
+    {
+      move: 'Mist',
+      type: 'Ice',
+      cat: 'Status',
+      power: null,
+      acc: null,
+      pp: 30
+    },
+    {
+      move: 'Earthquake',
+      type: 'Ground',
+      cat: 'Physical',
+      power: 100,
+      acc: 100,
+      pp: 10
+    },
+    {
+      move: 'Ember',
+      type: 'Fire',
+      cat: 'Special',
+      power: 40,
+      acc: 100,
+      pp: 25
+    },
+    {
+      move: 'Fire Fang',
+      type: 'Fire',
+      cat: 'Physical',
+      power: 65,
+      acc: 95,
+      pp: 15
+    },
+    {
+      move: 'Dragon Breath',
+      type: 'Dragon',
+      cat: 'Special',
+      power: 60,
+      acc: 100,
+      pp: 20
+    },
+    {
+      move: 'Smokescreen',
+      type: 'Normal',
+      cat: 'Status',
+      power: null,
+      acc: 100,
+      pp: 20
+    }
+  ],
+  natures: [],
+  items: []
+};
