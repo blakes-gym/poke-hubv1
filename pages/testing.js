@@ -16,7 +16,7 @@ export default function TeamMemberGraph () {
     //   <Legend />
     //   <Bar dataKey="a" fill="#8884d8"/>
     // </BarChart>
-    <BarChart layout='vertical' width={730} height={1000} data={data1} >
+    <BarChart  barCategoryGap="50" layout='vertical' width={730} height={1000} data={data1} >
       <XAxis type="number"/>
       <YAxis style={{fontSize: 10}} dataKey="name" type="category" yAxisId="id"/>
       <CartesianGrid strokeDasharray="3 3" />
