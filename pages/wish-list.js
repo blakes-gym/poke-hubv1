@@ -7,10 +7,5 @@ export default function Wishlist() {
     <div>
       <PokemonRow pokemonData={pokemonData} />
     </div>
-    // <div>
-    //   {pokemonData.map((pokemon, index) => {
-    //     return <PokemonRow pokemon={pokemon} key={index} />;
-    //   })}
-    // </div>
   );
 }
