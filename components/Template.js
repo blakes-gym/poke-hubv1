@@ -10,7 +10,7 @@ export default function Template({ children }) {
   return (
     <div className="bg-secondary">
       <div style={{ maxWidth: 1200 }} className="mx-auto bg-white">
-        <h2 className="text-center py-3">Poké Hub</h2>
+        <h2 className="text-center py-3 mb-0">Poké Hub</h2>
         <Navbar
           bg="light"
           expand="lg"
