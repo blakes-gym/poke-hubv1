@@ -8,32 +8,32 @@ import {
   Legend
 } from 'recharts';
 
-export default function TeamMemberGraph({ stats }) {
+export default function TeamMemberGraph({ pokemon }) {
   //formats data for chart
   let pokemonStats = [
     {
       stat: 'HP',
-      value: stats.hp
+      value: pokemon.hp
     },
     {
       stat: 'Atk',
-      value: stats.attack
+      value: pokemon.attack
     },
     {
       stat: 'Def',
-      value: stats.defense
+      value: pokemon.defense
     },
     {
       stat: 'Sp. Atk',
-      value: stats.spAtk
+      value: pokemon.spatk
     },
     {
       stat: 'Sp. Def',
-      value: stats.spDef
+      value: pokemon.spdef
     },
     {
       stat: 'Speed',
-      value: stats.speed
+      value: pokemon.speed
     }
   ];
   //captures maximum value for each domain
