@@ -4,13 +4,15 @@ import Badge from 'react-bootstrap/Badge';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import HexByType from '../../hexData.js';
-import data from '../../data/dummyData.js';
 import TeamMemberData from './TeamMemberData.js';
 import TeamMemberGraph from './TeamMemberGraph.js';
 import { useState, useEffect } from 'react';
 
-export default function Team () {
+export default function Team ({ data }) {
   return (
+    <div>
+
+
     <Accordion>
     {data.map((pokemon, idx) => {
       return (
@@ -41,5 +43,6 @@ export default function Team () {
       )
     })}
 </Accordion>
+</div>
   )
 }
