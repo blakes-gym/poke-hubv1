@@ -1,12 +1,39 @@
 import Window from '../components/page-1-home/Window.js';
-import Mobile from '../components/page-1-home/Mobile.js'
-import '../components/page-1-home/page-1-styles.scss';
+import Mobile from '../components/page-1-home/Mobile.js';
+import './index.scss';
+
+import { useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
+
+const test = gql`
+  {
+    pokemon(id: [34, 55, 877, 574, 777, 3]) {
+      id
+      name
+      type1
+      type2
+      hp
+      atk
+      def
+      spatk
+      spdef
+      speed
+      total
+      sprite
+      icon
+    }
+  }
+`
 
 export default function Index() {
+  const { loading, err, data } = useQuery(test)
+  if (loading) return <div>loading. . .</div>
+  if (err) return <div>Error</div>
+  console.log(data)
   return (
     <div>
-      <Mobile />
-      <Window />
+      <Mobile pokemon={data.pokemon}/>
+      <Window pokemon={data.pokemon}/>
     </div>
   )
 }

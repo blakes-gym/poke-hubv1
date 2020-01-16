@@ -1,47 +1,56 @@
-import Table from 'react-bootstrap/Table';
-import Data from '../../data/dummyData.js';
-import hexData from '../../hexData.js';
+import {Table} from 'react-bootstrap';
+import hexData from '../../utils/hexDataDerick';
 import Search from './Search.js';
 
-export default function Window () {
+
+export default function Window ({pokemon}) {
   return (
-    <div>
+    <div className="d-none d-sm-block">
       <Search />
-        <Table className="d-none d-sm-block" bordered hover>
-          <thead className="thead-dark">
-            <tr>
-              <th style={{borderRightStyle: 'none'}}>#</th>
-              <th style={{borderLeftStyle:'none', borderRightStyle: 'none'}}></th>
-              <th>Name</th>
-              <th>Type</th>
-              <th>HP</th>
-              <th>Attack</th>
-              <th>Defense</th>
-              <th>Sp. Atk</th>
-              <th>Sp. Def</th>
-              <th>Speed</th>
-              <th>Total</th>
-              <th>Moves</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Data.map((pokemon, index) => (
-              <tr key={pokemon.DexNo}>
-                <td style={{width:'5%', borderRightStyle: 'none'}}><img style={{width:'40px', height:'5%'}} src={pokemon.Sprite}></img></td>
-                <td style={{width:'5%', borderLeftStyle:'none', borderRightStyle: 'none'}}>{pokemon.DexNo}</td>
-                <td style={{width:'10%'}}>{pokemon.Name}</td>
-                <td style={{width:'10%'}}>{pokemon.Type.map((type, index) => (<div key={`${pokemon.DexNo} ${type}`} style={{backgroundColor: hexData[type], color:'white', textAlign: 'center'}}>{type}</div>))}</td>
-                <td style={{width:'10%'}}>{pokemon.Stats.HP}</td>
-                <td style={{width:'10%'}}>{pokemon.Stats.Attack}</td>
-                <td style={{width:'10%'}}>{pokemon.Stats.Defense}</td>
-                <td style={{width:'10%'}}>{pokemon.Stats['Sp. Atk']}</td>
-                <td style={{width:'10%'}}>{pokemon.Stats['Sp. Def']}</td>
-                <td style={{width:'10%'}}>{pokemon.Stats.Speed}</td>
-                <td style={{width:'10%'}}>{pokemon.Stats.Total}</td>
-                <td style={{width:'5%'}}>Moves</td>
+        <Table bordered hover>
+            <thead className="thead-dark">
+              <tr>
+                <th style={{borderRightStyle: 'none'}}>#</th>
+                <th style={{borderLeftStyle:'none', borderRightStyle: 'none'}}></th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>HP</th>
+                <th>Attack</th>
+                <th>Defense</th>
+                <th>Sp. Atk</th>
+                <th>Sp. Def</th>
+                <th>Speed</th>
+                <th>Total</th>
+                <th>Moves</th>
               </tr>
-            ))}
-          </tbody>
+            </thead>
+            <tbody>
+              {pokemon.map((pokemon, index) => (
+                <tr key={pokemon.id}>
+                  <td style={{width:'5%', borderRightStyle: 'none'}}><img style={{height:'2rem', width: '2rem'}} src={pokemon.icon}></img></td>
+                  <td style={{width:'5%', borderLeftStyle:'none', borderRightStyle: 'none'}}>{pokemon.id}</td>
+                  <td style={{width:'10%'}}>{pokemon.name}</td>
+                  <td style={{width:'10%'}}>
+                    { pokemon.type2 ? (
+                      <div key={`${pokemon.id} ${pokemon.type1}`} style={{backgroundColor: hexData[pokemon.type1], color:'white', textAlign: 'center'}}>{pokemon.type1}</div>
+                    ) : (
+                      <div>
+                      <div key={`${pokemon.id} ${pokemon.type1}`} style={{backgroundColor: hexData[pokemon.type1], color:'white', textAlign: 'center'}}>{pokemon.type1}</div>
+                      <div key={`${pokemon.id} ${pokemon.type2}`} style={{backgroundColor: hexData[pokemon.type2], color:'white', textAlign: 'center'}}>{pokemon.type2}</div>
+                      </div>
+                    )}
+                  </td>
+                  <td style={{width:'10%'}}>{pokemon.hp}</td>
+                  <td style={{width:'10%'}}>{pokemon.atk}</td>
+                  <td style={{width:'10%'}}>{pokemon.def}</td>
+                  <td style={{width:'10%'}}>{pokemon.spatk}</td>
+                  <td style={{width:'10%'}}>{pokemon.spdef}</td>
+                  <td style={{width:'10%'}}>{pokemon.speed}</td>
+                  <td style={{width:'10%'}}>{pokemon.total}</td>
+                  <td style={{width:'5%'}}>Moves</td>
+                </tr>
+              ))}
+            </tbody>
         </Table>
     </div>
   )
