@@ -51,7 +51,7 @@ export default function TeamMemberGraph({ stats }) {
       <PolarAngleAxis dataKey='stat' />
       <PolarRadiusAxis angle={60} domain={[0, maxVal + 20]} />
       <Radar
-        name='Total'
+        name='Stats'
         dataKey='value'
         stroke='rgba(255, 159, 64, 0.2)'
         fill='rgba(255, 159, 64, 0.2)'
