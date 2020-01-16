@@ -32,12 +32,12 @@ export default function Window ({pokemon}) {
                   <td style={{width:'10%'}}>{pokemon.name}</td>
                   <td style={{width:'10%'}}>
                     { pokemon.type2 ? (
-                      <div key={`${pokemon.id} ${pokemon.type1}`} style={{backgroundColor: hexData[pokemon.type1], color:'white', textAlign: 'center'}}>{pokemon.type1}</div>
-                    ) : (
                       <div>
-                      <div key={`${pokemon.id} ${pokemon.type1}`} style={{backgroundColor: hexData[pokemon.type1], color:'white', textAlign: 'center'}}>{pokemon.type1}</div>
-                      <div key={`${pokemon.id} ${pokemon.type2}`} style={{backgroundColor: hexData[pokemon.type2], color:'white', textAlign: 'center'}}>{pokemon.type2}</div>
+                        <div key={pokemon.id} style={{backgroundColor: hexData[pokemon.type1], color:'white', textAlign: 'center'}}>{pokemon.type1}</div>
+                        <div key={pokemon.id} style={{backgroundColor: hexData[pokemon.type2], color:'white', textAlign: 'center'}}>{pokemon.type2}</div>
                       </div>
+                    ) : (
+                      <div key={`${pokemon.id} ${pokemon.type1}`} style={{backgroundColor: hexData[pokemon.type1], color:'white', textAlign: 'center'}}>{pokemon.type1}</div>
                     )}
                   </td>
                   <td style={{width:'10%'}}>{pokemon.hp}</td>
