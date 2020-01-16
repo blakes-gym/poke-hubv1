@@ -5,20 +5,24 @@ import React, { useState } from 'react';
 
 function TeamButton() {
   const [onTeam, teamStatus] = useState(false);
-  const handleClick = () => teamStatus(!onTeam);
+  const handleTeamClick = () => teamStatus(!onTeam);
   if (!onTeam) {
     return (
-      <Button variant='primary' onClick={handleClick}>
+      <Button variant='primary' onClick={handleTeamClick}>
         Add To Team
       </Button>
     );
   } else {
     return (
-      <Button variant='success' onClick={handleClick}>
+      <Button variant='success' onClick={handleTeamClick}>
         ✔️Added!
       </Button>
     );
   }
+}
+
+function DetailButton() {
+  return <Button>Additional Details</Button>;
 }
 
 export default function PokemonRow({ pokemon }) {
@@ -32,6 +36,7 @@ export default function PokemonRow({ pokemon }) {
           </Card.Title>
           <StatList stats={pokemon.Stats} />
           <br></br>
+          <DetailButton />
           <TeamButton />
         </Card.Body>
       </Card>
