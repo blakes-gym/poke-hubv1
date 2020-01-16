@@ -1,60 +1,72 @@
-export default {
-  normal: {
+export default [
+  {
+    type: 'normal',
     strengths: null,
     weaknesses: ['fighting'],
     immune: ['ghost']
   },
-  fire: {
+  {
+    type: 'fire',
     strengths: ['grass', 'bug', 'ice', 'steel'],
     weaknesses: ['fire', 'water', 'rock', 'dragon'],
     immune: null
   },
-  water: {
+  {
+    type: 'water',
     strengths: ['fire', 'ground', 'rock'],
     weaknesses: ['water', 'grass', 'dragon'],
     immune: null
   },
-  electric: {
+  {
+    type: 'electric',
     strengths: ['water', 'flying'],
     weaknesses: ['electric', 'ground', 'dragon'],
     immune: ['ground']
   },
-  grass: {
+  {
+    type: 'grass',
     strengths: ['water', 'ground', 'rock'],
     weaknesses: ['fire', 'grass', 'poison', 'flying', 'bug', 'dragon', 'steel'],
     immune: null
   },
-  ice: {
+  {
+    type: 'ice',
     strengths: ['grass', 'ground', 'flying', 'dragon'],
     weaknesses: ['fire', 'water', 'ice', 'steel'],
     immune: null
   },
-  fighting: {
+  {
+    type: 'fighting',
     strengths: ['normal', 'ice', 'rock', 'Dark', 'steel'],
     weaknesses: ['poison', 'flying', 'psychic', 'bug', 'Fairy'],
     immune: ['ghost']
   },
-  poison: {
+  {
+    type: 'poison',
     strengths: ['grass', 'Fairy'],
     weaknesses: ['poison', 'ground', 'rock', 'Ghost'],
     immune: null
   },
-  ground: {
+  {
+    type: 'ground',
     strengths: ['fire', 'electric', 'poison', 'rock', 'steel'],
     weaknesses: ['grass', 'bug'],
     immune: ['electric', 'flying']
   },
-  flying: {
+  {
+    type: 'flying',
     strengths: ['grass', 'fighting', 'bug'],
     weaknesses: ['electric', 'rock', 'steel'],
     immune: null
   },
-  psychic: {
+  {
+    type: 'psychic',
     strengths: ['fighting', 'poison'],
     weaknesses: ['psychic', 'steel'],
     immune: ['dark']
   },
-  bug: {
+  {
+    type: 'bug',
     strengths: ['grass', 'psychic', 'dark'],
     weaknesses: [
       'fire',
@@ -67,34 +79,40 @@ export default {
     ],
     immune: null
   },
-  rock: {
+  {
+    type: 'rock',
     strengths: ['fire', 'ice', 'flying', 'bug'],
     weaknesses: ['fighting', 'ground', 'steel'],
     immune: null
   },
-  ghost: {
+  {
+    type: 'ghost',
     strengths: ['psychic', 'ghost'],
     weaknesses: ['dark'],
     immune: ['normal']
   },
-  dragon: {
+  {
+    type: 'dragon',
     strengths: ['dragon'],
     weaknesses: ['steel', 'fairy'],
     immune: ['fairy']
   },
-  dark: {
+  {
+    type: 'dark',
     strengths: ['Grass', 'bug', 'ice', 'steel'],
     weaknesses: ['fire', 'water', 'rock', 'dragon'],
     immune: null
   },
-  steel: {
+  {
+    type: 'steel',
     strengths: ['ice', 'rock', 'fairy'],
     weaknesses: ['fire', 'water', 'electric', 'steel'],
     immune: null
   },
-  fairy: {
+  {
+    type: 'fairy',
     strengths: ['fighting', 'dragon', 'dark'],
     weaknesses: ['fire', 'poison', 'steel'],
     immune: null
   }
-};
+]

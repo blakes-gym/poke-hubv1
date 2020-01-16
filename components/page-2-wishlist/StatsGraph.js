@@ -10,20 +10,38 @@ import {
 
 export default function TeamMemberGraph({ stats }) {
   //formats data for chart
-  let pokemonStats = [];
+  let pokemonStats = [
+    {
+      stat: 'HP',
+      value: stats.hp
+    },
+    {
+      stat: 'Atk',
+      value: stats.attack
+    },
+    {
+      stat: 'Def',
+      value: stats.defense
+    },
+    {
+      stat: 'Sp. Atk',
+      value: stats.spAtk
+    },
+    {
+      stat: 'Sp. Def',
+      value: stats.spDef
+    },
+    {
+      stat: 'Speed',
+      value: stats.speed
+    }
+  ];
   //captures maximum value for each domain
   let maxVal = 0;
 
-  for (var key in stats) {
-    if (key !== 'Total') {
-      let obj = {};
-      obj.stat = key;
-      obj.value = stats[key];
-      pokemonStats.push(obj);
-
-      if (stats[key] > maxVal) {
-        maxVal = stats[key];
-      }
+  for (var stat of pokemonStats) {
+    if (stat.value > maxVal) {
+      maxVal = stat.value;
     }
   }
 
@@ -33,7 +51,7 @@ export default function TeamMemberGraph({ stats }) {
       <PolarAngleAxis dataKey='stat' />
       <PolarRadiusAxis angle={60} domain={[0, maxVal + 20]} />
       <Radar
-        name='Total'
+        name='Stats'
         dataKey='value'
         stroke='rgba(255, 159, 64, 0.2)'
         fill='rgba(255, 159, 64, 0.2)'
