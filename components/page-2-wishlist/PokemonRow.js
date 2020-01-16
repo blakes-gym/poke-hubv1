@@ -7,7 +7,6 @@ export default function PokemonRow({ pokemonData }) {
   return (
     <div>
       <Accordion>
-        {console.log(pokemonData.pokemon)}
         {pokemonData.pokemon.map((pokemon, idx) => {
           return (
             <Card key={idx}>

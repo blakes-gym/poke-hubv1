@@ -17,11 +17,11 @@ export default function TeamMemberGraph({ pokemon }) {
     },
     {
       stat: 'Atk',
-      value: pokemon.attack
+      value: pokemon.atk
     },
     {
       stat: 'Def',
-      value: pokemon.defense
+      value: pokemon.def
     },
     {
       stat: 'Sp. Atk',

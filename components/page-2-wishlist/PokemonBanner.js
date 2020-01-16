@@ -34,7 +34,6 @@ function TeamButton() {
 export default function PokemonBanner({ pokemon, idx }) {
   return (
     <div>
-      {console.log(pokemon)}
       <Accordion.Toggle as={Card.Header} eventKey={`${idx}`}>
         <div className='accordianList'>
           <div className='d-flex align-items-center'>
