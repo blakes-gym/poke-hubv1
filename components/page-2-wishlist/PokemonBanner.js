@@ -1,24 +1,33 @@
 import Badge from 'react-bootstrap/Badge';
-import HexByType from '../../hexData.js';
+import HexByType from '../../utils/hexData.js';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
+import icons from '../../utils/imageUrls.js';
 
 function TeamButton() {
   const [onTeam, teamStatus] = useState(false);
   const handleTeamClick = () => teamStatus(!onTeam);
   if (!onTeam) {
     return (
-      <Button variant='primary' onClick={handleTeamClick}>
-        Add To Team
-      </Button>
+      <img
+        className='add-button'
+        onClick={handleTeamClick}
+        src={icons.plus}
+        width='20'
+        height='20'
+      ></img>
     );
   } else {
     return (
-      <Button variant='success' onClick={handleTeamClick}>
-        ✔️Added!
-      </Button>
+      <img
+        className='add-button'
+        onClick={handleTeamClick}
+        src={icons.check}
+        width='20'
+        height='20'
+      ></img>
     );
   }
 }
@@ -43,7 +52,7 @@ export default function PokemonBanner({ pokemon, idx }) {
               return (
                 <Badge
                   style={{
-                    background: HexByType[type],
+                    background: HexByType[type.toLowerCase()],
                     marginLeft: '2px',
                     margin: '2px'
                   }}
@@ -55,12 +64,7 @@ export default function PokemonBanner({ pokemon, idx }) {
             })}
           </div>
           <div className={'ml-auto align-item-center'}>
-            <img
-              className='add-button'
-              src='https://image.flaticon.com/icons/svg/748/748113.svg'
-              width='20'
-              height='20'
-            ></img>
+            <TeamButton />
           </div>
         </div>
         {/* </div> */}
