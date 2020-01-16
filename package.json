@@ -27,6 +27,7 @@
     "apollo-client": "2.6.4",
     "apollo-link-http": "1.5.15",
     "bootstrap": "^4.4.1",
+    "bootstrap-select": "^1.13.12",
     "c3": "^0.7.12",
     "c3.js": "^1.0.0",
     "chart.js": "^2.9.3",
