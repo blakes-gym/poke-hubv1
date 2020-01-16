@@ -1,4 +1,4 @@
-import StatList from './StatList.js';
+import StatList from './StatList.js/index.js';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';

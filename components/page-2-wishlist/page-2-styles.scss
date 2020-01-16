@@ -1,12 +1,31 @@
-.card-img-top {
-  padding: 10px 20px;
+// .card-img-top {
+//   padding: 10px 20px;
+// }
+
+// .pokemon-card-background {
+//   // background-image: url('https://i.imgur.com/cN2zlSp.png');
+//   height: 100%;
+//   left: -60px;
+//   z-index: -1;
+//   opacity: 0.8;
+//   position: absolute;
+// }
+
+.miniPokemonSprite {
+  width: 50px;
+  height: 50px;
 }
 
-.pokemon-card-background {
-  // background-image: url('https://i.imgur.com/cN2zlSp.png');
-  height: 100%;
-  left: -60px;
-  z-index: -1;
-  opacity: 0.8;
-  position: absolute;
+.accordianList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
