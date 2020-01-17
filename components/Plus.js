@@ -1,10 +1,10 @@
-import { plus } from '../utils/imageUrls'
+import images from '../utils/imageUrls'
 
 export default function Plus({ rotate }) {
   return (
     <div className="d-flex justify-content-center align-items-center mr-2">
       <img
-        src={plus}
+        src={images.plus}
         style={{
           height: 16,
           width: 'auto',

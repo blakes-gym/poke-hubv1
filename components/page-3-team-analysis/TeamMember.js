@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import Gradient from '../Gradient'
 import { Collapse } from 'react-bootstrap'
-import images from '../../utils/imageUrls'
+import Plus from '../Plus'
 
 import colors from '../../utils/hexData'
 
@@ -69,34 +69,7 @@ export default function TeamMember({
             )}
           </div>
           <div style={{ marginRight: 12 }}>
-            <div className="text-muted d-flex justify-content-center align-items-center mr-2">
-              <img
-                src={images.plus}
-                style={{
-                  height: 16,
-                  width: 'auto',
-                  opacity: 0.8,
-                  userSelect: 'none'
-                }}
-                className={[
-                  'rotate',
-                  open ? 'rotate-end' : 'rotate-start'
-                ].join(' ')}
-              />
-              <style jsx>{`
-                .rotate {
-                  transition: transform 0.2s;
-                }
-
-                .rotate-start {
-                  transform: rotate(0deg);
-                }
-
-                .rotate-end {
-                  transform: rotate(-45deg);
-                }
-              `}</style>
-            </div>
+            <Plus rotate={open} />
           </div>
         </Gradient>
       </div>
