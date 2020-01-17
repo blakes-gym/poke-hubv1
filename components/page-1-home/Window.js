@@ -58,8 +58,8 @@ export default function Window ({pokemon}) {
                 <tr key={pokemon.id} style={{textAlign: 'center'}} onClick={handleShow}>
                   <td style={{width:'5%', borderLeftStyle:'none', borderRightStyle: 'none'}}>{pokemon.id}</td>
                   <td style={{width:'5%', borderLeftStyle:'none', borderRightStyle: 'none'}}><img style={{height:'2rem', width: '2rem'}} src={pokemon.icon}></img></td>
-                  <td colspan="2" style={{width:'10%'}}>{pokemon.name}</td>
-                  <td colspan="2" style={{width:'10%'}}>
+                  <td colSpan="2" style={{width:'10%'}}>{pokemon.name}</td>
+                  <td colSpan="2" style={{width:'10%'}}>
                     { pokemon.type2 ? (
                       <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                         <img src={typeImages[pokemon.type1]} style={{width: '30%'}}/>
@@ -69,13 +69,13 @@ export default function Window ({pokemon}) {
                       <img src={typeImages[pokemon.type1]} style={{width: '30%'}}/>
                     )}
                   </td>
-                  <td colspan="2" style={{width:'10%'}}>{pokemon.hp}</td>
-                  <td colspan="2" style={{width:'10%'}}>{pokemon.atk}</td>
-                  <td colspan="2" style={{width:'10%'}}>{pokemon.def}</td>
-                  <td colspan="2" style={{width:'10%'}}>{pokemon.spatk}</td>
-                  <td colspan="2" style={{width:'10%'}}>{pokemon.spdef}</td>
-                  <td colspan="2" style={{width:'10%'}}>{pokemon.speed}</td>
-                  <td colspan="2" style={{width:'10%'}}>{pokemon.total}</td>
+                  <td colSpan="2" style={{width:'10%'}}>{pokemon.hp}</td>
+                  <td colSpan="2" style={{width:'10%'}}>{pokemon.atk}</td>
+                  <td colSpan="2" style={{width:'10%'}}>{pokemon.def}</td>
+                  <td colSpan="2" style={{width:'10%'}}>{pokemon.spatk}</td>
+                  <td colSpan="2" style={{width:'10%'}}>{pokemon.spdef}</td>
+                  <td colSpan="2" style={{width:'10%'}}>{pokemon.speed}</td>
+                  <td colSpan="2" style={{width:'10%'}}>{pokemon.total}</td>
                   {/* <MDBModal isOpen={show} fullHeight="true">
                       <MDBModalHeader style={{justifyContent: 'center'}}>
                         <div style={{display:"flex", justifyItems: 'center', alignItems: 'center'}}>
