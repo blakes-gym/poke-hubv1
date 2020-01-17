@@ -2,6 +2,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import PokemonBanner from './PokemonBanner.js';
 import CollapseData from './CollapseData.js';
+import Button from 'react-bootstrap/Button';
 
 export default function PokemonRow({ pokemonData }) {
   return (
@@ -16,6 +17,9 @@ export default function PokemonRow({ pokemonData }) {
                 pokemon={pokemon}
                 allPokemon={pokemonData}
               />
+              <Button variant='danger' block>
+                Remove {pokemon.name}
+              </Button>
             </Card>
           );
         })}
