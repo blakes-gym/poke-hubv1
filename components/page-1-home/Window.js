@@ -76,7 +76,7 @@ export default function Window ({pokemon}) {
                   <td colspan="2" style={{width:'10%'}}>{pokemon.spdef}</td>
                   <td colspan="2" style={{width:'10%'}}>{pokemon.speed}</td>
                   <td colspan="2" style={{width:'10%'}}>{pokemon.total}</td>
-                  <MDBModal isOpen={show} fullHeight="true">
+                  {/* <MDBModal isOpen={show} fullHeight="true">
                       <MDBModalHeader style={{justifyContent: 'center'}}>
                         <div style={{display:"flex", justifyItems: 'center', alignItems: 'center'}}>
                           <img src={pokemon.sprite} style={{width: '20%', flex: 1}} />
@@ -104,7 +104,7 @@ export default function Window ({pokemon}) {
                         <MDBBtn color="danger">Remove</MDBBtn>
                         <MDBBtn color="success">Add</MDBBtn>
                       </MDBModalFooter>
-                  </MDBModal>
+                  </MDBModal> */}
                 </tr>
               )
             })}
