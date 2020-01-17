@@ -1,10 +1,20 @@
-import 'bootstrap/scss/bootstrap.scss'
-
+import { useState } from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
+import 'bootstrap/scss/bootstrap.scss'
+import './template.scss'
+
+const navLinks = [
+  { href: '/', text: 'Home' },
+  { href: '/wish-list', text: 'Wish List' },
+  { href: '/team-analysis', text: 'Team Analysis' }
+]
+
 export default function Template({ children }) {
+  const [open, setOpen] = useState(false)
+  const toggle = () => setOpen(!open)
   const router = useRouter()
   const path = router.pathname
   return (
@@ -15,9 +25,11 @@ export default function Template({ children }) {
           bg="light"
           expand="lg"
           sticky="top"
-          className="border-top border-bottom"
+          expanded={open}
+          onSelect={() => console.log('yaaaay')}
+          className="border-top"
         >
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
             {
               {
                 ['/']: 'Poke Hub',
@@ -26,18 +38,17 @@ export default function Template({ children }) {
               }[path]
             }
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggle} />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <NavLink href="/" path={path}>
-                Home
-              </NavLink>
-              <NavLink href="/wish-list" path={path}>
-                Wish List
-              </NavLink>
-              <NavLink href="/team-analysis" path={path}>
-                Team Analysis
-              </NavLink>
+              {navLinks.map((navLink, i) => (
+                <NavLink
+                  {...navLink}
+                  path={path}
+                  key={`navlink-${i}`}
+                  setOpen={setOpen}
+                />
+              ))}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -47,17 +58,17 @@ export default function Template({ children }) {
   )
 }
 
-function NavLink({ children, href, path }) {
-  const classes = ['nav-link', 'ml-auto']
+function NavLink({ text, href, path, setOpen }) {
+  const classes = ['nav-link', 'ml-auto', href === path ? 'active' : '']
   return (
     <Link href={href}>
-      {path === href ? (
-        <a className={'active ' + classes.join(' ')}>
-          <u>{children}</u>
-        </a>
-      ) : (
-        <a className={classes.join(' ')}>{children}</a>
-      )}
+      <a
+        className={classes.join(' ')}
+        style={{ textDecoration: href === path ? 'underline' : '' }}
+        onClick={() => setOpen(false)}
+      >
+        {text}
+      </a>
     </Link>
   )
 }

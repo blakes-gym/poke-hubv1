@@ -37,7 +37,6 @@ export default function TeamAnalysis() {
 
   return (
     <div>
-      <Matchup types={types} />
       <div className="border-top" />
       {data.pokemon.map((pokemon, i) => (
         <Fragment key={`team-member-${i}`}>
@@ -45,14 +44,7 @@ export default function TeamAnalysis() {
           <div className="border-top" />
         </Fragment>
       ))}
-      <h1>heyo</h1>
-      <h1>heyo</h1>
-      <h1>heyo</h1>
-      <h1>heyo</h1>
-      <h1>heyo</h1>
-      <h1>heyo</h1>
-      <h1>heyo</h1>
-      <h1>heyo</h1>
+      <Matchup types={types} />
     </div>
   )
 }

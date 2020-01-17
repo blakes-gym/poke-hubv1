@@ -47,7 +47,25 @@ export default function PokemonBanner({ pokemon, idx }) {
               className='miniPokemonSprite'
             ></div>
             <div style={{ margin: '5px' }}>{pokemon.name}</div>
-            {pokemon.type.map((type, idx) => {
+            <Badge
+              style={{
+                background: HexByType[pokemon.type1],
+                marginLeft: '2px',
+                margin: '2px'
+              }}
+            >
+              {pokemon.type1}
+            </Badge>
+            <Badge
+              style={{
+                background: HexByType[pokemon.type2],
+                marginLeft: '2px',
+                margin: '2px'
+              }}
+            >
+              {pokemon.type2}
+            </Badge>
+            {/* {pokemon.type.map((type, idx) => {
               return (
                 <Badge
                   style={{
@@ -60,7 +78,7 @@ export default function PokemonBanner({ pokemon, idx }) {
                   {type}
                 </Badge>
               );
-            })}
+            })} */}
           </div>
           <div className={'ml-auto align-item-center'}>
             <TeamButton />
