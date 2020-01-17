@@ -6,7 +6,7 @@ import images from '../../utils/imageUrls'
 
 export default function TeamMember({
   name,
-  sprite,
+  icon,
   type1,
   type2,
   atk,
@@ -41,7 +41,7 @@ export default function TeamMember({
                 className="d-flex justify-content-center align-items-center"
                 style={{ width: 46, height: 46 }}
               >
-                <img src={sprite} style={{ width: 40, height: 'auto' }} />
+                <img src={icon} style={{ width: 40, height: 'auto' }} />
               </div>
             </div>
           </Gradient>

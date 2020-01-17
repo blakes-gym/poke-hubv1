@@ -10,7 +10,7 @@ export default function CollapseData({ allPokemon, pokemon, idx }) {
       <Card.Body>
         <div className='dataContainer'>
           <PokemonStats pokemon={pokemon}></PokemonStats>
-          <StatsGraph stats={pokemon.stats}></StatsGraph>
+          <StatsGraph pokemon={pokemon}></StatsGraph>
           <Moves allPokemon={allPokemon} />
         </div>
       </Card.Body>

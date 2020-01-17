@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import PokemonBanner from './PokemonBanner.js';
 import CollapseData from './CollapseData.js';
 
-export default function PokemonRow_New({ pokemonData }) {
+export default function PokemonRow({ pokemonData }) {
   return (
     <div>
       <Accordion>
