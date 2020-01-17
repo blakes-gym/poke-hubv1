@@ -34,11 +34,11 @@ export default function TeamAnalysis() {
   return (
     <div>
       <div className="border-top" />
-      <div className="my-5">
+      {/* <div className="my-5">
         <DropdownButton title="Teams">
           <Dropdown.Item>Heyo</Dropdown.Item>
         </DropdownButton>
-      </div>
+      </div> */}
       <Team team={pokemon} />
       <Matchup team={pokemon} />
     </div>
