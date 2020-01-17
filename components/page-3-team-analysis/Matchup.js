@@ -29,8 +29,8 @@ export default function Matchup({ type, types }) {
           </tr>
         </thead>
         <tbody>
-          {matchups.map(({ type }) => (
-            <tr>
+          {matchups.map(({ type }, i) => (
+            <tr key={`matchup-type-${i}`}>
               <th style={{ background: colors[type] + '8' }}>
                 <div>{type}</div>
               </th>
