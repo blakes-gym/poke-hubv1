@@ -7,6 +7,7 @@ import { useQuery } from '@apollo/react-hooks';
 const GET_POKEMON = gql`
   {
     pokemon(id: [144, 67, 93, 5, 12, 8, 17, 203, 603, 708, 395, 148]) {
+      id
       name
       sprite
       icon
