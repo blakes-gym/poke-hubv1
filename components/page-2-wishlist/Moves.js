@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import moveData from '../../data/dummyData2.js';
+import NatureAndItem from './NatureAndItem.js';
+
 class Moves extends Component {
   constructor(props) {
     super(props);
@@ -24,10 +26,11 @@ class Moves extends Component {
 
   render() {
     return (
-      <div>
+      <div className='d-flex flex-column'>
+        <h5 className='align-self-center'>Move Set</h5>
         {Object.keys(this.state).map((moveNo, index) => {
           return (
-            <div key={index}>
+            <div key={index} className='p-2 align-self-center'>
               <form>
                 <select name={moveNo} onChange={this.handleChange}>
                   {moveData.moves.map((moveDetails, index) => {
@@ -39,11 +42,10 @@ class Moves extends Component {
                   })}
                 </select>
               </form>
-              <div>Dmg:</div>
-              <div>PP:</div>
             </div>
           );
         })}
+        <NatureAndItem />
       </div>
     );
   }
