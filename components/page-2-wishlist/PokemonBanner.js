@@ -3,38 +3,15 @@ import HexByType from '../../utils/hexData.js';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import { useState } from 'react';
-import icons from '../../utils/imageUrls.js';
-
-function TeamButton() {
-  const [onTeam, teamStatus] = useState(false);
-  const handleTeamClick = () => teamStatus(!onTeam);
-  if (!onTeam) {
-    return (
-      <img
-        className='add-button'
-        onClick={handleTeamClick}
-        src={icons.plus}
-        width='20'
-        height='20'
-      ></img>
-    );
-  } else {
-    return (
-      <img
-        className='add-button'
-        onClick={handleTeamClick}
-        src={icons.check}
-        width='20'
-        height='20'
-      ></img>
-    );
-  }
-}
+import Plus from '../Plus.js';
 
 export default function PokemonBanner({ pokemon, idx }) {
+  const [open, setOpen] = useState(false);
+
+  const toggle = () => setOpen(!open);
   return (
     <div>
-      <Accordion.Toggle as={Card.Header} eventKey={`${idx}`}>
+      <Accordion.Toggle as={Card.Header} eventKey={`${idx}`} onClick={toggle}>
         <div className='accordianList'>
           <div className='d-flex align-items-center'>
             <div
@@ -81,7 +58,7 @@ export default function PokemonBanner({ pokemon, idx }) {
             })} */}
           </div>
           <div className={'ml-auto align-item-center'}>
-            <TeamButton />
+            <Plus rotate={open} />
           </div>
         </div>
       </Accordion.Toggle>
