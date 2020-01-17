@@ -45,7 +45,7 @@ export default function Template({ children }) {
                   {...navLink}
                   path={path}
                   key={`navlink-${i}`}
-                  toggle={toggle}
+                  setOpen={setOpen}
                 />
               ))}
             </Nav>
@@ -57,14 +57,14 @@ export default function Template({ children }) {
   )
 }
 
-function NavLink({ text, href, path, toggle }) {
+function NavLink({ text, href, path, setOpen }) {
   const classes = ['nav-link', 'ml-auto', href === path ? 'active' : '']
   return (
     <Link href={href}>
       <a
         className={classes.join(' ')}
         style={{ textDecoration: href === path ? 'underline' : '' }}
-        onClick={toggle}
+        onClick={() => setOpen(false)}
       >
         {text}
       </a>
