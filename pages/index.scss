@@ -8,9 +8,18 @@
   position: absolute;
   transform: rotate(-30deg);
 }
+
+
+
 .pokeName {
   font-family: 'Bangers';
   font-size: 1rem;
+  text-decoration: underline;
+}
+
+.pokeNameWindow {
+  font-family: 'Bangers';
+  font-size: 2rem;
   text-decoration: underline;
 }
 
@@ -134,6 +143,7 @@ td {
 
 }
 
-table {
-  border-spacing: 0 0.5em;
+.modalRow {
+  padding: 5px 0.3rem;
 }
+
