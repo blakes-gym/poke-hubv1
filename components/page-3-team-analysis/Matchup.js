@@ -1,12 +1,12 @@
 import { Table } from 'react-bootstrap'
 
 import colors from '../../utils/hexData'
+import matchups from '../../data/typeMatchups2'
+import allTypes from '../../data/types'
 
-import matchups from '../../data/typeMatchups'
-
-export default function Matchup({ type, types }) {
+export default function Matchup({ types }) {
   return (
-    <div className="my-3">
+    <div className="my-5">
       <Table
         size="sm"
         className="text-center mx-auto shadow"
@@ -16,7 +16,7 @@ export default function Matchup({ type, types }) {
       >
         <thead>
           <tr>
-            <th className="bg-secondary"></th>
+            <th className="bg-light"></th>
             <th colSpan="2">Offense</th>
             <th colSpan="2">Defense</th>
           </tr>
@@ -29,19 +29,45 @@ export default function Matchup({ type, types }) {
           </tr>
         </thead>
         <tbody>
-          {matchups.map(({ type }, i) => (
+          {allTypes.map((type, i) => (
             <tr key={`matchup-type-${i}`}>
-              <th style={{ background: colors[type] + '8' }}>
-                <div>{type}</div>
+              <th style={{ background: colors[type] + 'c', fontSize: 9 }}>
+                {type.toUpperCase()}
               </th>
-              <td>4</td>
-              <td>4</td>
-              <td>4</td>
-              <td>4</td>
+              {['os', 'ow', 'ds', 'dw'].map(check => (
+                <Analysis
+                  type={type}
+                  types={types}
+                  check={check}
+                  key={`${type}-${check}`}
+                />
+              ))}
             </tr>
           ))}
         </tbody>
       </Table>
     </div>
+  )
+}
+
+function Analysis({ type, types, check }) {
+  let count = 0
+  for (const type2 of types) {
+    const matchup = matchups[type2]
+    if (matchup[check].includes(type)) count++
+  }
+  const classNames = []
+  if (['os', 'ds'].includes(check) && count > 0) classNames.push('text-success')
+  else if (['ow', 'dw'].includes(check) && count > 0)
+    classNames.push('text-danger')
+  else classNames.push('text-muted')
+
+  return (
+    <td
+      className={classNames.join(' ')}
+      style={count > 0 ? { fontWeight: 900, fontSize: 14 } : {}}
+    >
+      {count}
+    </td>
   )
 }
