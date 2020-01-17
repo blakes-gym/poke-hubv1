@@ -29,7 +29,6 @@ export default function Index() {
   const { loading, err, data } = useQuery(test)
   if (loading) return <div>loading. . .</div>
   if (err) return <div>Error</div>
-  console.log(data)
   return (
     <div style={{overflow: 'auto'}}>
       <Mobile pokemon={data.pokemon}/>
