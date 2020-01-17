@@ -42,20 +42,6 @@ export default function PokemonBanner({ pokemon, idx }) {
             >
               {pokemon.type2}
             </Badge>
-            {/* {pokemon.type.map((type, idx) => {
-              return (
-                <Badge
-                  style={{
-                    background: HexByType[type.toLowerCase()],
-                    marginLeft: '2px',
-                    margin: '2px'
-                  }}
-                  key={idx}
-                >
-                  {type}
-                </Badge>
-              );
-            })} */}
           </div>
           <div className={'ml-auto align-item-center'}>
             <Plus rotate={open} />
