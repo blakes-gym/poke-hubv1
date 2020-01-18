@@ -2,3 +2,14 @@ td,
 th {
   vertical-align: middle !important;
 }
+
+.custom-dropdown {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.hover {
+  &:hover {
+    background: rgba(0, 0, 0, 0.075);
+  }
+}

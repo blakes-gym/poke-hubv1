@@ -1,49 +1,76 @@
-import { Fragment } from 'react'
-import gql from 'graphql-tag'
-import { useQuery } from '@apollo/react-hooks'
-
-import TeamMember from '../components/page-3-team-analysis/TeamMember'
 import Matchup from '../components/page-3-team-analysis/Matchup'
-
 import './team-analysis.scss'
+import { Fragment } from 'react'
+import TeamMember from '../components/page-3-team-analysis/TeamMember'
+import { server } from '../constants'
+import fetch from 'isomorphic-unfetch'
+import DropdownSearch from '../components/page-3-team-analysis/DropdownSearch'
+import { useState } from 'react'
+import axios from 'axios'
 
-const GET_POKEMON = gql`
-  {
-    pokemon(id: [6, 842, 866, 448, 849, 834]) {
-      name
-      sprite
-      icon
-      type1
-      type2
-      hp
-      atk
-      def
-      spatk
-      spdef
-      speed
-      total
-    }
-  }
-`
-
-export default function TeamAnalysis() {
-  const { loading, err, data } = useQuery(GET_POKEMON)
-  if (loading) return <div>loading</div>
-  if (err) return <div>error</div>
-  const types1 = data.pokemon.map(({ type1 }) => type1).filter(type => !!type)
-  const types2 = data.pokemon.map(({ type2 }) => type2).filter(type => !!type)
-  const types = [...types1, ...types2]
+export default function TeamAnalysis({ pokemon, names, id }) {
+  const [team, setTeam] = useState(pokemon)
+  const update = info =>
+    axios
+      .put(server + '/team', info)
+      .then(() => axios.get(server + `/team?id=${id}&include=true`))
+      .then(({ data }) =>
+        setTeam([
+          data[0].p1,
+          data[0].p2,
+          data[0].p3,
+          data[0].p4,
+          data[0].p5,
+          data[0].p6
+        ])
+      )
+      .catch(err => console.error(err))
 
   return (
-    <div>
+    <>
       <div className="border-top" />
-      {data.pokemon.map((pokemon, i) => (
+      {team.map((member, i) => (
         <Fragment key={`team-member-${i}`}>
-          <TeamMember {...pokemon} />
+          {!!member ? (
+            <TeamMember {...member} id={id} number={i + 1} update={update} />
+          ) : (
+            <div
+              className="p-3 bg-light d-flex justify-content-center"
+              style={{ height: 74 }}
+            >
+              <DropdownSearch
+                data={names}
+                update={update}
+                teamNumber={i + 1}
+                teamId={id}
+              />
+            </div>
+          )}
           <div className="border-top" />
         </Fragment>
       ))}
-      <Matchup types={types} />
-    </div>
+      <Matchup team={team} />
+    </>
   )
+}
+
+TeamAnalysis.getInitialProps = async function() {
+  const res = await fetch(server + '/team?id=1&include=true')
+  const data = await res.json()
+  const { name, p1, p2, p3, p4, p5, p6, id } = data[0]
+  const parsed = {
+    id,
+    name,
+    pokemon: [p1, p2, p3, p4, p5, p6]
+  }
+
+  const res2 = await fetch(server + '/pokemon/all')
+  const data2 = await res2.json()
+  const names = data2.map(({ name, id }) => {
+    return {
+      name,
+      id
+    }
+  })
+  return { ...parsed, names }
 }

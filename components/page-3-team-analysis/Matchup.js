@@ -4,7 +4,11 @@ import colors from '../../utils/hexData'
 import matchups from '../../data/typeMatchups2'
 import allTypes from '../../data/types'
 
-export default function Matchup({ types }) {
+export default function Matchup(props) {
+  const team = props.team.filter(pokemon => !!pokemon)
+  const types1 = team.map(({ type1 }) => type1).filter(type => !!type)
+  const types2 = team.map(({ type2 }) => type2).filter(type => !!type)
+  const types = [...types1, ...types2]
   return (
     <div className="my-5">
       <Table
