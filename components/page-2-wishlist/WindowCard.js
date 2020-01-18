@@ -55,9 +55,30 @@ export default function WindowCard({ pokemon }) {
         <Card>
           <Card.Header>
             <div className='d-flex'>
-              <b>
-                #{pokemon.id} {pokemon.name}
-              </b>
+              <div>
+                <b>
+                  #{pokemon.id} {pokemon.name}
+                </b>
+                <br></br>
+                <Badge
+                  style={{
+                    background: HexByType[pokemon.type1],
+                    marginLeft: '2px',
+                    margin: '2px'
+                  }}
+                >
+                  {pokemon.type1}
+                </Badge>
+                <Badge
+                  style={{
+                    background: HexByType[pokemon.type2],
+                    marginLeft: '2px',
+                    margin: '2px'
+                  }}
+                >
+                  {pokemon.type2}
+                </Badge>
+              </div>
               <img
                 onClick={handleClick}
                 className={[
