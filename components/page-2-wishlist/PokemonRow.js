@@ -20,7 +20,7 @@ function handleRemove(pokemonObj) {
 
 export default function PokemonRow({ pokemonData }) {
   return (
-    <div>
+    <div className='d-sm-none'>
       <Accordion>
         {pokemonData.pokemon.map((pokemon, idx) => {
           return (
