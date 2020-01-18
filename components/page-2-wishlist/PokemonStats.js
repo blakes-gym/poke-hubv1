@@ -7,25 +7,19 @@ export default function TeamMemberData({ pokemon }) {
         <tr>
           <td>HP</td>
           <td>{pokemon.hp}</td>
-        </tr>
-        <tr>
-          <td>Attack</td>
-          <td>{pokemon.atk}</td>
-        </tr>
-        <tr>
-          <td>Defense</td>
-          <td>{pokemon.def}</td>
-        </tr>
-        <tr>
-          <td>Sp. Atk</td>
+          <td>Sp.Atk</td>
           <td>{pokemon.spatk}</td>
         </tr>
         <tr>
-          <td>Sp. Def</td>
+          <td>Atk</td>
+          <td>{pokemon.atk}</td>
+          <td>Sp.Def</td>
           <td>{pokemon.spdef}</td>
         </tr>
         <tr>
-          <td>Speed</td>
+          <td>Def</td>
+          <td>{pokemon.def}</td>
+          <td>Spd</td>
           <td>{pokemon.speed}</td>
         </tr>
         <tr>

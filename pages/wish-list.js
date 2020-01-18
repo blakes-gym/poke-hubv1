@@ -4,6 +4,7 @@ import PokemonRow from '../components/page-2-wishlist/PokemonRow.js';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import WL_WindowView from '../components/page-2-wishlist/WL_WindowView.js';
+import PikaJulian from '../components/PikaJulian.js';
 
 const GET_POKEMON = gql`
   {
@@ -30,12 +31,7 @@ export default function Wishlist() {
   if (loading)
     return (
       <div>
-        <a href='https://imgur.com/JHjpCEa'>
-          <img
-            src='https://i.imgur.com/JHjpCEa.png'
-            style={{ width: '400px', height: '400px', marginLeft: '33%' }}
-          />
-        </a>
+        <PikaJulian />
         <div style={{ textAlign: 'center' }}>
           <h4>Loading your Wishlist!</h4>
         </div>

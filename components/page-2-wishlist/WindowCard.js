@@ -4,6 +4,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import { useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
 import HexByType from '../../utils/hexData';
+import PokemonStats from './PokemonStats.js';
 
 export default function WindowCard({ pokemon }) {
   const [caught, setCaught] = useState(false);
@@ -20,37 +21,7 @@ export default function WindowCard({ pokemon }) {
     <Accordion>
       <CardGroup className='p-2'>
         <Card className='p-2'>
-          <Card.Img src={pokemon.sprite} />
-          {/* <div className='d-flex align-items-center'>
-            <div
-              style={{
-                backgroundImage: `url(${pokemon.sprite})`,
-                backgroundSize: 'cover',
-                marginRight: '12px',
-                zIndex: '1'
-              }}
-              className='miniPokemonSprite'
-            ></div>
-            <div style={{ margin: '5px' }}>{pokemon.name}</div>
-            <Badge
-              style={{
-                background: HexByType[pokemon.type1],
-                marginLeft: '2px',
-                margin: '2px'
-              }}
-            >
-              {pokemon.type1}
-            </Badge>
-            <Badge
-              style={{
-                background: HexByType[pokemon.type2],
-                marginLeft: '2px',
-                margin: '2px'
-              }}
-            >
-              {pokemon.type2}
-            </Badge>
-          </div> */}
+          <Card.Img className='mt-auto mb-auto' src={pokemon.sprite} />
         </Card>
         <Card>
           <Card.Header>
@@ -94,6 +65,9 @@ export default function WindowCard({ pokemon }) {
               ></img>
             </div>
           </Card.Header>
+          <Card.Body>
+            <PokemonStats pokemon={pokemon} />
+          </Card.Body>
         </Card>
       </CardGroup>
     </Accordion>
