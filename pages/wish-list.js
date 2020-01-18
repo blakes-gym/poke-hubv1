@@ -6,43 +6,43 @@ import { useQuery } from '@apollo/react-hooks';
 import WL_WindowView from '../components/page-2-wishlist/WL_WindowView.js';
 import PikaJulian from '../components/PikaJulian.js';
 
-const GET_POKEMON = gql`
-  {
-    pokemon(id: [144, 67, 93, 5, 12, 8, 17, 203, 603, 708, 395, 148]) {
-      id
-      name
-      sprite
-      icon
-      type1
-      type2
-      hp
-      atk
-      def
-      spatk
-      spdef
-      speed
-      total
-    }
-  }
-`;
+// const GET_POKEMON = gql`
+//   {
+//     pokemon(id: [144, 67, 93, 5, 12, 8, 17, 203, 603, 708, 395, 148, 890]) {
+//       id
+//       name
+//       sprite
+//       icon
+//       type1
+//       type2
+//       hp
+//       atk
+//       def
+//       spatk
+//       spdef
+//       speed
+//       total
+//     }
+//   }
+// `;
 
 export default function Wishlist() {
-  const { loading, err, data } = useQuery(GET_POKEMON);
-  if (loading)
-    return (
-      <div>
-        <PikaJulian />
-        <div style={{ textAlign: 'center' }}>
-          <h4>Loading your Wishlist!</h4>
-        </div>
-      </div>
-    );
-  if (err) return <div>error</div>;
+  // const { loading, err, data } = useQuery(GET_POKEMON);
+  // if (loading)
+  //   return (
+  //     <div>
+  //       <PikaJulian />
+  //       <div style={{ textAlign: 'center' }}>
+  //         <h4>Loading your Wishlist!</h4>
+  //       </div>
+  //     </div>
+  //   );
+  // if (err) return <div>error</div>;
 
   return (
     <div>
-      <WL_WindowView pokemonData={data} />
-      <PokemonRow pokemonData={data} />
+      <WL_WindowView pokemonData={pokemonData} />
+      {/* <PokemonRow pokemonData={data} /> */}
     </div>
   );
 }

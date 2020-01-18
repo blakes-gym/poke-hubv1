@@ -6,10 +6,10 @@ export default {
       type: ['Ghost', 'Poison'],
       stats: {
         hp: 45,
-        attack: 50,
-        defense: 45,
-        spAtk: 115,
-        spDef: 55,
+        atk: 50,
+        def: 45,
+        spatk: 115,
+        spdef: 55,
         speed: 95,
         total: 405
       },
@@ -21,10 +21,10 @@ export default {
       type: ['Fire'],
       stats: {
         hp: 58,
-        attack: 64,
-        defense: 58,
-        spAtk: 80,
-        spDef: 65,
+        atk: 64,
+        def: 58,
+        spatk: 80,
+        spdef: 65,
         speed: 80,
         total: 405
       },
@@ -36,10 +36,10 @@ export default {
       type: ['Ice', 'Ground'],
       stats: {
         hp: 50,
-        attack: 50,
-        defense: 40,
-        spAtk: 30,
-        spDef: 30,
+        atk: 50,
+        def: 40,
+        spatk: 30,
+        spdef: 30,
         speed: 50,
         total: 250
       },
@@ -51,10 +51,10 @@ export default {
       type: ['Ground', 'Dragon'],
       stats: {
         hp: 50,
-        attack: 70,
-        defense: 50,
-        spAtk: 50,
-        spDef: 50,
+        atk: 70,
+        def: 50,
+        spatk: 50,
+        spdef: 50,
         speed: 70,
         total: 340
       },
@@ -66,10 +66,10 @@ export default {
       type: ['Normal'],
       stats: {
         hp: 104,
-        attack: 91,
-        defense: 63,
-        spAtk: 91,
-        spDef: 63,
+        atk: 91,
+        def: 63,
+        spatk: 91,
+        spdef: 63,
         speed: 68,
         total: 480
       },
@@ -81,14 +81,29 @@ export default {
       type: ['Fighting'],
       stats: {
         hp: 50,
-        attack: 120,
-        defense: 53,
-        spAtk: 35,
-        spDef: 110,
+        atk: 120,
+        def: 53,
+        spatk: 35,
+        spdef: 110,
         speed: 87,
         total: 455
       },
       sprite: 'https://cdn.bulbagarden.net/upload/3/32/106Hitmonlee.png'
+    },
+    {
+      dexNo: 350,
+      name: 'Milotic',
+      type: ['Water'],
+      stats: {
+        hp: 50,
+        atk: 70,
+        def: 50,
+        spatk: 50,
+        spdef: 50,
+        speed: 70,
+        total: 340
+      },
+      sprite: 'https://cdn.bulbagarden.net/upload/3/36/350Milotic.png'
     }
   ],
   moves: [
