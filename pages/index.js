@@ -7,7 +7,7 @@ import gql from 'graphql-tag'
 
 const test = gql`
   {
-    pokemon(id: [34, 55, 877, 574, 777, 3]) {
+    pokemon(id: [34, 55, 877, 574, 777, 3, 20, 36, 40, 100]) {
       id
       name
       type1
@@ -31,7 +31,7 @@ export default function Index() {
   if (err) return <div>Error</div>
   console.log(data)
   return (
-    <div>
+    <div style={{overflow: 'auto'}}>
       <Mobile pokemon={data.pokemon}/>
       <Window pokemon={data.pokemon}/>
     </div>
