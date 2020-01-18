@@ -27,14 +27,20 @@ const GET_POKEMON = gql`
 
 export default function Wishlist() {
   const { loading, err, data } = useQuery(GET_POKEMON);
-  if (loading) {
+  if (loading)
     return (
       <div>
-        <img src={require('../PikaJulian.PNG')}></img>
-        loading
+        <a href='https://imgur.com/JHjpCEa'>
+          <img
+            src='https://i.imgur.com/JHjpCEa.png'
+            style={{ width: '400px', height: '400px', marginLeft: '33%' }}
+          />
+        </a>
+        <div style={{ textAlign: 'center' }}>
+          <h4>Loading your Wishlist!</h4>
+        </div>
       </div>
     );
-  }
   if (err) return <div>error</div>;
 
   return (
