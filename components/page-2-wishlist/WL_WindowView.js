@@ -3,9 +3,8 @@ import Container from 'react-bootstrap/Container';
 import CardRow from './CardRow.js';
 
 export default function WL_WindowView({ pokemonData }) {
-  var pokeArr = pokemonData.pokemon;
-  var leftCol = pokeArr.slice(0, Math.ceil(pokeArr.length / 2));
-  var rightCol = pokeArr.slice(Math.ceil(pokeArr.length / 2));
+  var leftCol = pokemonData.slice(0, Math.ceil(pokemonData.length / 2));
+  var rightCol = pokemonData.slice(Math.ceil(pokemonData.length / 2));
 
   return (
     <Container className='d-none d-sm-block'>
@@ -16,23 +15,23 @@ export default function WL_WindowView({ pokemonData }) {
       {rightCol.map((pokemon, index) => {
         return <WindowCard pokemon={pokemon} key={index} />;
       })} */}
-      {pokemonData.pokemon.map((pokemon, index) => {
+      {pokemonData.map((pokemon, index) => {
         if (index % 2) {
           return (
             <CardRow
-              pokemonOne={pokemonData.pokemon[index - 1]}
-              pokemonTwo={pokemonData.pokemon[index]}
+              pokemonOne={pokemonData[index - 1]}
+              pokemonTwo={pokemonData[index]}
               key={index}
             />
           );
         }
       })}
       {(function() {
-        if (pokemonData.pokemon.length % 2 !== 0) {
+        if (pokemonData.length % 2 !== 0) {
           return (
             <CardRow
-              pokemonOne={pokemonData.pokemon[pokemonData.pokemon.length - 1]}
-              key={pokemonData.pokemon.length - 1}
+              pokemonOne={pokemonData[pokemonData.length - 1]}
+              key={pokemonData.length - 1}
             />
           );
         }
