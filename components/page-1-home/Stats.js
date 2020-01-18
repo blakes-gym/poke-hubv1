@@ -4,7 +4,7 @@ export default function Stats ({pokemon}) {
   return (
     <Card className="statsContainer">
       <Card.Header className="topHalf" style={{background: 'transparent', margin: '-0.25rem'}}>STATS</Card.Header>
-      <table style={{fontSize: '0.75rem', margin: '5px'}}>
+      <table style={{fontSize: '0.7rem', margin: '5px'}}>
         <tbody>
           <tr>
             <th className="HPcolor">HP</th>
