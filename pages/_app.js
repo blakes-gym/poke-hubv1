@@ -1,20 +1,15 @@
 import App from 'next/app'
-import { withApollo } from '../graphql/apollo'
-import { ApolloProvider } from 'react-apollo'
-
 import Template from '../components/Template'
 
 class _App extends App {
   render() {
-    const { Component, pageProps, apolloClient } = this.props
+    const { Component, pageProps } = this.props
     return (
-      <ApolloProvider client={apolloClient}>
-        <Template>
-          <Component {...pageProps} />
-        </Template>
-      </ApolloProvider>
+      <Template>
+        <Component {...pageProps} />
+      </Template>
     )
   }
 }
 
-export default withApollo(_App)
+export default _App
