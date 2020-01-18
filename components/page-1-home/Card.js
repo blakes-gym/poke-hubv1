@@ -18,6 +18,7 @@ export default function Card ({pokemon}) {
 
 
   return (
+    <div style={{position: 'relative'}}>
       <animated.div {...bind()} className="item" style={{ background: bg }}>
         <animated.div className="av" style={{ transform: avSize, justifySelf: delta[0] > 0 ? 'end' : 'start' }} />
           <animated.div className="fg" style={{ transform: interpolate([x, size], (x, s) => `translate3d(${x}px,0,0) scale(${s})`) }}>
@@ -31,14 +32,14 @@ export default function Card ({pokemon}) {
               <img src='https://i.imgur.com/4Nnb5T5.png' style={{position: 'absolute', width:'15%', right: 0, top: 0, opacity: `${(delta[0] > 0) ? 1 : 0}`, transition: '2s'}}/>
             </div>
             <div style={{flex: 5, overflow: 'hidden'}}>
-
-              
               <Stats pokemon={pokemon}/>
             </div>
-          </div> 
+          </div>  
           <FaArrowRight size='2rem' style={{position: 'absolute', right: '1%', top: '40%'}}/>
         </animated.div>
       </animated.div>
 
+      {/* <GoGraph style={{right: '17%', bottom: '5%', position: 'absolute'}} size='2rem'/> */}
+    </div>
   )
 }
