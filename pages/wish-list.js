@@ -10,21 +10,10 @@ import { server } from '../constants';
 import queryString from 'query-string';
 
 export default function Wishlist({ allPokemon }) {
-  // const { loading, err, data } = useQuery(GET_POKEMON);
-  // if (loading)
-  //   return (
-  //     <div>
-  //       <PikaJulian />
-  //       <div style={{ textAlign: 'center' }}>
-  //         <h4>Loading your Wishlist!</h4>
-  //       </div>
-  //     </div>
-  //   );
-  // if (err) return <div>error</div>;
   return (
     <div>
       <WL_WindowView pokemonData={allPokemon} />
-      {/* <PokemonRow pokemonData={data} /> */}
+      <PokemonRow pokemonData={allPokemon} />
     </div>
   );
 }
@@ -32,16 +21,23 @@ export default function Wishlist({ allPokemon }) {
 Wishlist.getInitialProps = async function() {
   const query = queryString.stringifyUrl({
     url: server + '/pokemon',
-    query: { id: [110, 350, 4, 69, 420, 118, 473, 94, 80] }
+    query: { id: [350, 467, 194, 395, 476, 10, 394] }
   });
   const res = await fetch(query);
   const data = await res.json();
 
+  console.log('data', data);
   console.log(`Show data fetched. Count: ${data.length}, Body: ${data}`);
 
-  return {
-    allPokemon: data.map(pokemon => {
-      return pokemon;
-    })
-  };
+  if (data.length) {
+    return {
+      allPokemon: data.map(pokemon => {
+        return pokemon;
+      })
+    };
+  } else {
+    return {
+      allPokemon: null
+    };
+  }
 };
