@@ -4,10 +4,6 @@ import WindowCard from './WindowCard.js';
 
 export default function CardRow({ pokemonOne, pokemonTwo }) {
   return (
-    // <div>
-    //   {console.log('1', pokemonOne)}
-    //   {console.log('2', pokemonTwo)}
-    // </div>
     <Row>
       <Col>
         <WindowCard pokemon={pokemonOne} />

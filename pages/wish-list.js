@@ -27,7 +27,14 @@ const GET_POKEMON = gql`
 
 export default function Wishlist() {
   const { loading, err, data } = useQuery(GET_POKEMON);
-  if (loading) return <div>loading</div>;
+  if (loading) {
+    return (
+      <div>
+        <img src={require('../PikaJulian.PNG')}></img>
+        loading
+      </div>
+    );
+  }
   if (err) return <div>error</div>;
 
   return (

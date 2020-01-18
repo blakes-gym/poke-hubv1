@@ -4,12 +4,12 @@ import Accordion from 'react-bootstrap/Accordion';
 import { useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
 import HexByType from '../../utils/hexData';
-import { urlObjectKeys } from 'next/dist/next-server/lib/utils';
 
 export default function WindowCard({ pokemon }) {
   const [caught, setCaught] = useState(false);
   function handleClick() {
     setCaught(!caught);
+    // axios update request for caught bool
   }
 
   function toggleCaught() {
@@ -21,7 +21,6 @@ export default function WindowCard({ pokemon }) {
       <CardGroup className='p-2'>
         <Card className='p-2'>
           <Card.Img src={pokemon.sprite} />
-          {/* <Accordion.Toggle>Click me for more info!</Accordion.Toggle> */}
           {/* <div className='d-flex align-items-center'>
             <div
               style={{
