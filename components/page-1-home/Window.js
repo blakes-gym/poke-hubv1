@@ -4,31 +4,16 @@ import Search from './Search.js';
 import { MDBDataTable, MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader, MDBCol, MDBRow} from 'mdbreact';
 import typeImages from '../../utils/typeImages';
 import {FaAngleDown, FaAngleUp} from 'react-icons/fa';
-import {useState, useRef} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import Modal from './Modal.js';
 
 
 
-export default function Window ({pokemon}) {
-  const [arrow, setArrow] = useState({'#': true, 'Name': true,'Type': true,'HP': true,'Attack': true,'Defense': true,'Sp. Atk': true,'Sp. Def': true,'Speed': true,'Total': true})
+export default function Window ({pokemon, compareValues, setCategory}) {
   const [show, setShow] = useState(false)
   const [info, setInfo] = useState('')
-
-
-  // const toggle = arrow ? (<FaAngleUp style={{float: 'right', cursor: 'pointer'}}/>) : (<FaAngleDown style={{float: 'right', cursor: 'pointer'}}/>)
-
-  const toggle = {
-    true: <FaAngleUp style={{float: 'right', cursor: 'pointer'}}/>,
-    false: <FaAngleDown style={{float: 'right', cursor: 'pointer'}}/>
-  }
-
-
-  const handleClick = (e) => {
-    setArrow({
-      ...arrow,
-      [e.currentTarget.getAttribute('name')] : !arrow[e.currentTarget.getAttribute('name')]
-    })
-  }
+  // const [poke, setPoke] = useState(pokemon)
+  // const [category, setCategory] = useState('')
 
 
   const handleShow = (pokemon, stats) => {
@@ -41,40 +26,46 @@ export default function Window ({pokemon}) {
     } 
   }
 
+  // useEffect(() => {
+  //   setPoke(poke.sort(compareValues(category.input, category.direction)));
+  // }, [category, poke])
 
-  // const sortingFunctions = (key, order = 'asc') => {
-
-  //   const varA = (typeof a[key] === 'string') ? a[key].toUpperCase() : a[key];
-  //   const varB = (typeof b[key] === 'string') ? b[key].toUpperCase() : b[key];
-  //   let comparison = 0;
-  //   if (varA > varB) {
-  //     comparison = 1;
-  //   } else if (varA < varB) {
-  //     comparison = -1;
-  //   }
-  //   return (
-  //     (order === 'desc') ? (comparison * -1) : comparison
-  //   )
+  // const handleCategory = (key, order='asc') => {
+  //   setCategory({
+  //     type: key,
+  //     direction: order
+  //   });
   // }
-    // let varA = a[key]
-    // let varB = a[key]
 
 
-    // if (typeof pokemon[key] === 'number') {
-    //   if (order === 'asc') {
-    //     pokemon.sort(function(a, b){return a-b})
-    //   } else {
-    //     pokemon.sort(function(a, b){return b-a})
-    //   }
-    // } else {
-    //   if (order === 'asc') {
-    //     pokemon.sort( )
-    //   }
-    // }
+  // useEffect(() => {
+  //   setPoke(poke.sort(compareValues(category.input, category.direction)));
+  // }, [category, poke])
+  // function compareValues(key, order = 'asc') {
+  //   return function innerSort(a, b) {
+
+  //     const varA = (typeof a[key] === 'string') ? a[key].toUpperCase() : a[key];
+  //     const varB = (typeof b[key] === 'string') ? b[key].toUpperCase() : b[key];
+
+  //     let comparison = 0;
+  //     if (varA > varB) {
+  //       comparison = 1;
+  //     } else if (varA < varB) {
+  //       comparison = -1;
+  //     }
+  //     return (
+  //       (order === 'desc') ? (comparison * -1) : comparison
+  //     );
+  //   };
+  // };
+  
+
+
+
 
   return (
     <div className="d-none d-sm-block overflowY">
-      <Search />
+      <Search compareValues={compareValues} setCategory={setCategory}/>
       <Table bordered hover style={{cursor: 'pointer'}}>
           <thead className="thead-dark" style={{fontSize: '14px', cursor: 'default'}}>
             <tr>

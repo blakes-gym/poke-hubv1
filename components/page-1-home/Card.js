@@ -31,8 +31,6 @@ export default function Card ({pokemon}) {
               <img src='https://i.imgur.com/4Nnb5T5.png' style={{position: 'absolute', width:'15%', right: 0, top: 0, opacity: `${(delta[0] > 0) ? 1 : 0}`, transition: '2s'}}/>
             </div>
             <div style={{flex: 5, overflow: 'hidden'}}>
-
-              
               <Stats pokemon={pokemon}/>
             </div>
           </div> 
