@@ -47,6 +47,8 @@ export default function Search ({setCategory}) {
             <MDBFormInline className="md-form mb-4" style={{width: '515px', marginLeft: '-5%'}}>
               <MDBHamburgerToggler color="#007bff" id="hamburger1" onClick={()=> setCollapse1(!collapse1)} />
                 <input className="form-control form-control-med ml-3 w-75 border border-primary text-dark" type="text" placeholder="Enter PokeName" aria-label="Search" />
+                <Button variant="primary" style={{marginLeft: '5px'}}>Search</Button>   
+
                   <MDBCollapse isOpen={collapse1} navbar>
                     <MDBNavbarNav center="true" style={{display: 'flex', justifyContent: 'space-evenly'}}>
 
