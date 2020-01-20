@@ -45,7 +45,9 @@ class Moves extends Component {
             </div>
           );
         })}
-        <NatureAndItem />
+        <div className='align-self-center'>
+          <NatureAndItem />
+        </div>
       </div>
     );
   }

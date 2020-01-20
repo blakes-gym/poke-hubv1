@@ -5,44 +5,39 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import WL_WindowView from '../components/page-2-wishlist/WL_WindowView.js';
 import PikaJulian from '../components/PikaJulian.js';
+import fetch from 'isomorphic-unfetch';
+import { server } from '../constants';
+import queryString from 'query-string';
 
-// const GET_POKEMON = gql`
-//   {
-//     pokemon(id: [144, 67, 93, 5, 12, 8, 17, 203, 603, 708, 395, 148, 890]) {
-//       id
-//       name
-//       sprite
-//       icon
-//       type1
-//       type2
-//       hp
-//       atk
-//       def
-//       spatk
-//       spdef
-//       speed
-//       total
-//     }
-//   }
-// `;
-
-export default function Wishlist() {
-  // const { loading, err, data } = useQuery(GET_POKEMON);
-  // if (loading)
-  //   return (
-  //     <div>
-  //       <PikaJulian />
-  //       <div style={{ textAlign: 'center' }}>
-  //         <h4>Loading your Wishlist!</h4>
-  //       </div>
-  //     </div>
-  //   );
-  // if (err) return <div>error</div>;
-
+export default function Wishlist({ allPokemon }) {
   return (
     <div>
-      <WL_WindowView pokemonData={pokemonData} />
-      {/* <PokemonRow pokemonData={data} /> */}
+      <WL_WindowView pokemonData={allPokemon} />
+      <PokemonRow pokemonData={allPokemon} />
     </div>
   );
 }
+
+Wishlist.getInitialProps = async function() {
+  const query = queryString.stringifyUrl({
+    url: server + '/pokemon',
+    query: { id: [350, 467, 194, 395, 476, 10, 394] }
+  });
+  const res = await fetch(query);
+  const data = await res.json();
+
+  console.log('data', data);
+  console.log(`Show data fetched. Count: ${data.length}, Body: ${data}`);
+
+  if (data.length) {
+    return {
+      allPokemon: data.map(pokemon => {
+        return pokemon;
+      })
+    };
+  } else {
+    return {
+      allPokemon: null
+    };
+  }
+};
