@@ -7,7 +7,6 @@ import axios from 'axios';
 import PikaJulian from '../PikaJulian.js';
 
 export default function PokemonRow({ pokemonData }) {
-  console.log('POKEMONROW', pokemonData);
   if (!pokemonData) {
     return (
       <div className='d-flex d-sm-none'>

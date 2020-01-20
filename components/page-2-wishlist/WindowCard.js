@@ -11,7 +11,6 @@ import Button from 'react-bootstrap/Button';
 import WindowDropdown from './WindowDropdown.js';
 
 export default function WindowCard({ pokemon }) {
-  console.log('WINDOWCARD', pokemon);
   const [caught, setCaught] = useState(false);
   const [drop, setDrop] = useState(false);
 

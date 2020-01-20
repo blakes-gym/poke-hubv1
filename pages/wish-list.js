@@ -29,8 +29,7 @@ Wishlist.getInitialProps = async function() {
   const res = await fetch('http://localhost:4000/api/wishlist');
   const data = await res.json();
 
-  console.log('data', data);
-  console.log(`Show data fetched. Count: ${data.length}, Body: ${data}`);
+  console.log(`Show data fetched. Count: ${data.length}`);
 
   if (data.length) {
     return {
