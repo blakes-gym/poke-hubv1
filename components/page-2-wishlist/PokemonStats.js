@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export default function PokemonStats({ pokemon }) {
+  console.log('POKEMONSTATS', pokemon);
   return (
     <Table
       responsive

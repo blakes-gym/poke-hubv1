@@ -19,11 +19,14 @@ export default function Wishlist({ allPokemon }) {
 }
 
 Wishlist.getInitialProps = async function() {
+  /*
   const query = queryString.stringifyUrl({
     url: server + '/pokemon',
     query: { id: [350, 467, 194, 395, 476, 10, 394] }
   });
   const res = await fetch(query);
+   */
+  const res = await fetch('http://localhost:4000/api/wishlist');
   const data = await res.json();
 
   console.log('data', data);
