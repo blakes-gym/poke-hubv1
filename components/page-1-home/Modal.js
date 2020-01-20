@@ -1,4 +1,3 @@
-
 import { MDBDataTable, MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader, MDBCol, MDBRow} from 'mdbreact';
 import StatsChart from './StatsChart.js';
 

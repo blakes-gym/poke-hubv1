@@ -19,7 +19,7 @@ export default function StatsChart ({ stats }) {
         <Tooltip cursor={{ stroke: 'black', strokeWidth: 2 }} />
         <PolarGrid />
         <PolarAngleAxis dataKey="value"/>
-        <PolarRadiusAxis angle={30} domain={[0, 200]} />
+        <PolarRadiusAxis angle={30} domain={[0, 150]} />
         <Radar name="Total" dataKey="stat" stroke="rgba(255, 159, 64)" fill="rgba(255, 159, 64)" label="true" fillOpacity={1} />
       </RadarChart>
     </div>

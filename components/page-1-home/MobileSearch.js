@@ -4,6 +4,7 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import {FaSearch, FaFilter} from 'react-icons/fa';
 import {Typeahead} from 'react-bootstrap-typeahead';
+import {useState} from 'react'
 const filter = ['ID', 'Name', 'Type', 'HP', 'Attack', 'Defense', 'SpAtk', 'SpDef', 'Speed', 'Total'];
 
 const animatedComponents1 = makeAnimated()
@@ -11,8 +12,21 @@ const category = [{label:'Normal', value: 'normal', color:'#A8A77A'}, {label: 'F
 
 
 
-export default function MobileSearch ({show, compareValues, setCategory}) {
-  
+export default function MobileSearch ({show, compareValues, setCategory, setShow}) {
+  const [toggleFilter, setFilter] = useState(null);
+  const [categoryInput, setInput] = useState('');
+  const filter1 = {
+    id: 'id',
+    name: 'name',
+    type: 'type1',
+    hp: 'hp',
+    attack: 'atk',
+    defense: 'def',
+    spatk: 'spatk',
+    spdef: 'spdef',
+    speed: 'speed',
+    Total: 'total'
+}
   return (
   <div>
      <MDBModal isOpen={show} fullHeight="true">
@@ -62,8 +76,19 @@ export default function MobileSearch ({show, compareValues, setCategory}) {
         </MDBModalBody>
 
         <MDBModalFooter style={{borderBottom: '1px solid black'}}>
-        <Button variant="dark" style={{marginLeft: '0px', float: 'right', display: 'relative'}} onClick={() => setCategory({input: filter1[categoryInput], direction: toggleFilter})}>Filter</Button> 
+        <MDBBtn color="secondary" style={{left: '-50%'}} onClick={() => setShow(!show)}>Close</MDBBtn>
 
+        <Button variant="dark" style={{marginLeft: '0px', float: 'right', display: 'relative'}} onClick={() => setCategory({input: filter1[categoryInput], direction: toggleFilter})}>Filter</Button> 
+        <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                  <div class="form-check">
+                    <input name="ascending" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" onClick={() => setFilter('asc')}/>
+                    <label class="form-check-label" for="exampleRadios2">Lowest</label>
+                  </div>
+                  <div class="form-check">
+                    <input name="descending" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option1" onClick={() => setFilter('desc')}/>
+                    <label class="form-check-label" for="exampleRadios2"> Highest</label>
+                  </div>
+                  </div>
         </MDBModalFooter>
       </MDBModal>
   </div>

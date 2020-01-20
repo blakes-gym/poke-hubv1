@@ -88,8 +88,5 @@ export default function Search ({setCategory}) {
         </MDBContainer>
       </MDBNavbar>
     </MDBContainer>
-
-
-
   );
 }

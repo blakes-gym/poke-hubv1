@@ -1,10 +1,9 @@
 import { useState } from 'react'
-
 import Gradient from '../Gradient'
 import { Collapse } from 'react-bootstrap'
 import Plus from '../Plus'
-
 import colors from '../../utils/hexData'
+import { Button } from 'react-bootstrap'
 
 export default function TeamMember({
   name,
@@ -17,7 +16,10 @@ export default function TeamMember({
   spatk,
   spdef,
   speed,
-  total
+  total,
+  id,
+  number,
+  update
 }) {
   const stats = [hp, atk, def, spatk, spdef, speed, total]
   const [open, setOpen] = useState(false)
@@ -89,6 +91,14 @@ export default function TeamMember({
               {stats.map((stat, i) => (
                 <div key={`${name}-stat-${i}`}>{stat}</div>
               ))}
+            </div>
+            <div className="ml-auto my-auto mr-4">
+              <Button
+                variant="danger"
+                onClick={() => update({ [`p${number}Id`]: null, id })}
+              >
+                Remove Pokemon
+              </Button>
             </div>
           </div>
         </div>

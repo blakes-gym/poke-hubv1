@@ -17,7 +17,7 @@ export default function Mobile ({pokemon, setCategory, compareValues}) {
         <FaSearch onClick={() => setShow(!show)} size='3rem'/>
       </div>
       {show ? (
-        <MobileSearch compareValues={compareValues} setCategory={setCategory} show={show} setShow={setShow}/>
+        <MobileSearch setShow={setShow} compareValues={compareValues} setCategory={setCategory} show={show} setShow={setShow}/>
       ) : null}
     </div>
   )
