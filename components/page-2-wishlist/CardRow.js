@@ -6,7 +6,7 @@ export default function CardRow({ pokemonOne, pokemonTwo }) {
   if (!pokemonTwo) {
     return (
       <Row>
-        <Col>
+        <Col className='p-0'>
           <WindowCard pokemon={pokemonOne} />
         </Col>
       </Row>
@@ -14,7 +14,7 @@ export default function CardRow({ pokemonOne, pokemonTwo }) {
   } else {
     return (
       <Row>
-        <Col>
+        <Col className='p-0'>
           <WindowCard pokemon={pokemonOne} />
         </Col>
         <Col>

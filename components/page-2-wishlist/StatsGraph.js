@@ -46,7 +46,7 @@ export default function TeamMemberGraph({ pokemon }) {
   }
 
   return (
-    <RadarChart outerRadius={80} width={730} height={250} data={pokemonStats}>
+    <RadarChart outerRadius={80} width={530} height={250} data={pokemonStats}>
       <PolarGrid />
       <PolarAngleAxis dataKey='stat' />
       <PolarRadiusAxis angle={60} domain={[0, maxVal + 20]} />
