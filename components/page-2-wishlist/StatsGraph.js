@@ -10,7 +10,6 @@ import {
 
 export default function TeamMemberGraph({ pokemon }) {
   //formats data for chart
-  console.log('StatsGraph', pokemon);
   let pokemonStats = [
     {
       stat: 'HP',

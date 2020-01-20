@@ -5,6 +5,7 @@ import StatsGraph from './StatsGraph.js';
 import Moves from './Moves.js';
 
 export default function CollapseData({ allPokemon, pokemon, idx }) {
+  console.log('COLLAPSEDATA', pokemon);
   return (
     <Accordion.Collapse eventKey={`${idx}`}>
       <Card.Body>

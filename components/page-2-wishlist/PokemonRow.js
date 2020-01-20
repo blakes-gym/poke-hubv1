@@ -19,6 +19,7 @@ function handleRemove(pokemonObj) {
 }
 
 export default function PokemonRow({ pokemonData }) {
+  console.log('POKEMONROW', pokemonData);
   if (!pokemonData) {
     return (
       <div className='d-flex d-sm-none'>
@@ -35,19 +36,19 @@ export default function PokemonRow({ pokemonData }) {
           {pokemonData.map((pokemon, idx) => {
             return (
               <Card key={idx}>
-                <PokemonBanner idx={idx} pokemon={pokemon} />
+                <PokemonBanner idx={idx} pokemon={pokemon.wlPoke} />
                 <CollapseData
                   idx={idx}
-                  pokemon={pokemon}
+                  pokemon={pokemon.wlPoke}
                   allPokemon={pokemonData}
                 />
                 <Button
                   variant='danger'
                   block
                   onClick={handleRemove(pokemon)}
-                  name={pokemon.name}
+                  name={pokemon.wlPoke.name}
                 >
-                  Remove {pokemon.name}
+                  Remove {pokemon.wlPoke.name}
                 </Button>
               </Card>
             );
