@@ -2,51 +2,22 @@ import Window from '../components/page-1-home/Window.js';
 import Mobile from '../components/page-1-home/Mobile.js';
 import './index.scss';
 import {useState, useEffect} from 'react';
-
-// import { useQuery } from '@apollo/react-hooks'
-// import gql from 'graphql-tag'
+import {server} from '../constants/index.js';
 import fetch from 'isomorphic-unfetch';
-
 import queryString from 'query-string';
-
-// const test = gql`
-//   {
-//     pokemon(id: [34, 55, 877, 574, 777, 3, 20, 36, 40, 100]) {
-//       id
-//       name
-//       type1
-//       type2
-//       hp
-//       atk
-//       def
-//       spatk
-//       spdef
-//       speed
-//       total
-//       sprite
-//       icon
-//     }
-//   }
-// `
-
-const poke = {
-  id: [1, 2, 3, 4, 5, 6, 7, 8, 9, 220, 800, 12, 254]
-}
-const test = queryString.stringify(poke)
-
-
-
+import axios from 'axios';
 
 
 export default function Index({data}) {
   const [pokemon, setPoke] = useState(data);
   const [category, setCategory] = useState('');
   
-  useEffect(() => {
+  useEffect(() => {    
     setPoke(pokemon.sort(compareValues(category.input, category.direction)));
   }, [category, pokemon]);
 
-  function compareValues(key, order = 'asc') {
+
+  const compareValues = (key, order = 'asc') => {
     return function innerSort(a, b) {
       const varA = (typeof a[key] === 'string') ? a[key].toUpperCase() : a[key];
       const varB = (typeof b[key] === 'string') ? b[key].toUpperCase() : b[key];
@@ -63,19 +34,46 @@ export default function Index({data}) {
     };
   };
 
+  const handleSearch = (search) => {
+    if (Array.isArray(search)) {
+      if (search.length) {
+        var types = [];
+        for (var i = 0; i < search.length; i++) {
+          types.push(search[i].value)
+        }
+        var query = queryString.stringify({type: types});
+        axios.get(`http://localhost:4000/api/pokemon?${query}`)
+          .then(({data}) => setPoke(data))
+          .catch(err => console.error(err))
+      } else {
+        setPoke(data)
+      }
+    } else {
+      if (search) {
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].name === search) {
+            setPoke([data[i]])
+          }
+        }
+      } else {
+        setPoke(data)
+      }
+    }
+  }
+
+
   return (
     <div style={{overflow: 'auto'}}>
-      <Mobile compareValues={compareValues} setCategory={setCategory} pokemon={pokemon}/>
-      <Window compareValues={compareValues} setCategory={setCategory} pokemon={pokemon}/>
+      <Mobile handleSearch={handleSearch} compareValues={compareValues} setCategory={setCategory} pokemon={pokemon}/>
+      <Window handleSearch={handleSearch} compareValues={compareValues} setCategory={setCategory} pokemon={pokemon}/>
     </div>
   )
 }
 
   
 Index.getInitialProps = async function() {
-  const res = await fetch(`http://poke-hub-backend.herokuapp.com/api/pokemon?${test}`);
+  const res = await fetch(server + '/pokemon/all');
   const data = await res.json();
-  console.log('test', data)
   return ({
     data,
   });
