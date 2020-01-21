@@ -16,6 +16,20 @@ export default function Card ({pokemon}) {
   })
   const avSize = x.interpolate({ map: Math.abs, range: [50, 300], output: ['scale(0.5)', 'scale(1)'], extrapolate: 'clamp' })
 
+  // const handleAdd = () => {
+  //   axios    
+  //   .post('/wishlist', pokemon)
+  //   .then(data => console.log(data))
+  //   .catch(err => console.log('err in PUT', err));
+  // }
+
+  // const handleDelete = () => {
+  //   axios
+  //   .delete(`/wishlist/${pokemon.id}`)
+  //   .then(() => console.log('delete successful'))
+  //   .catch((err) => console.log('delete unsuccessful', err))
+  // }
+
 
   return (
     <div style={{position: 'relative'}}>
