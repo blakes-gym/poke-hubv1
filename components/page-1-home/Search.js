@@ -1,13 +1,10 @@
 import React from "react";
-import { MDBCol, MDBFormInline } from "mdbreact";
-import {FaSearch, FaFilter} from 'react-icons/fa';
-import {Form, Dropdown, Accordion, Button} from 'react-bootstrap';
+import {MDBFormInline } from "mdbreact";
+import {FaFilter} from 'react-icons/fa';
+import {Button} from 'react-bootstrap';
 import {useState} from 'react';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import chroma from 'react-select';
-import { MDBInput } from 'mdbreact';
-import Toggle from 'react-toggle';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBContainer, MDBHamburgerToggler, MDBNavbarToggler} from 'mdbreact';
 import {Typeahead} from 'react-bootstrap-typeahead';
 
@@ -75,13 +72,13 @@ export default function Search ({setCategory, handleSearch, update}) {
                   setCategory({input: filter1[categoryInput], direction: toggleFilter});
               }}>Filter</Button>  
                 <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-                  <div class="form-check">
-                    <input name="ascending" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" onClick={() => setFilter('asc')}/>
-                    <label class="form-check-label" for="exampleRadios2">Lowest</label>
+                  <div className="form-check">
+                    <input name="ascending" className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" onClick={() => setFilter('asc')}/>
+                    <label className="form-check-label" for="exampleRadios2">Lowest</label>
                   </div>
-                  <div class="form-check">
-                    <input name="descending" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option1" onClick={() => setFilter('desc')}/>
-                    <label class="form-check-label" for="exampleRadios2"> Highest</label>
+                  <div className="form-check">
+                    <input name="descending" className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option1" onClick={() => setFilter('desc')}/>
+                    <label className="form-check-label" for="exampleRadios2"> Highest</label>
                   </div>
                 </div>
               </div>

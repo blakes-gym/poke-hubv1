@@ -27,7 +27,7 @@ export default function Window ({handleSearch, pokemon, compareValues, setCatego
       <div
         style={{
           background: colors[type] + 'd',
-          width: 60,
+          width: 90,
           paddingTop: 2,
           paddingBottom: 2,
           borderRadius: 4
@@ -73,14 +73,6 @@ export default function Window ({handleSearch, pokemon, compareValues, setCatego
                         <Type type={pokemon.type2} />
                       </div>
                     )}
-                    {/* { pokemon.type2 ? (
-                      <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-                        <img src={typeImages[pokemon.type1]} style={{width: '30%'}}/>
-                        <img src={typeImages[pokemon.type2]} style={{width: '30%'}}/>
-                      </div>
-                    ) : (
-                      <img src={typeImages[pokemon.type1]} style={{width: '30%'}}/>
-                    )} */}
                   </td>
                   <td style={{width:'10%'}}>{pokemon.hp}</td>
                   <td style={{width:'10%'}}>{pokemon.atk}</td>
