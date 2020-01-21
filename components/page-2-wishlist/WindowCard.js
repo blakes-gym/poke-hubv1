@@ -10,29 +10,44 @@ import Chevron from '../Chevron.js';
 import Button from 'react-bootstrap/Button';
 import WindowDropdown from './WindowDropdown.js';
 import CollapseData from './CollapseData.js';
+import axios from 'axios';
+import { local } from '../../constants';
+import { Component } from 'react';
 
-export default function WindowCard({ pokemon, allPokemon }) {
-  const [caught, setCaught] = useState(false);
-  const [drop, setDrop] = useState(false);
-
-  function handlePokeClick() {
-    setCaught(!caught);
-    // axios update request for caught bool
+export default class WindowCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      caught: false
+    };
+    this.handleCaught = this.handleCaught.bind(this);
   }
 
-  function toggleCaught() {
-    return caught ? 'isCaught' : 'notCaught';
+  componentDidMount() {
+    if (this.props.pokemon.caught === true) {
+      this.setState({ caught: true });
+    }
   }
 
-  function toggleDrop() {
-    return drop ? 'drop' : 'notDrop';
+  toggleCaught() {
+    console.log('hello from toggleCaught');
+    return this.state.caught ? 'isCaught' : 'notCaught';
   }
 
-  function handleDropdownClick() {
-    setDrop(!drop);
+  handleCaught() {
+    console.log(this.state.caught);
+    axios
+      .put(local + '/wishlist', {
+        id: this.props.pokemon.id,
+        caught: !this.state.caught
+      })
+      .then(() => {
+        console.log('updated bool!');
+        this.setState({ caught: !this.state.caught });
+      });
   }
 
-  if (pokemon) {
+  render() {
     return (
       <div className='p-2'>
         <Accordion>
@@ -40,7 +55,7 @@ export default function WindowCard({ pokemon, allPokemon }) {
             <Card className='p-2'>
               <Card.Img
                 className='mt-auto mb-auto'
-                src={pokemon.wlPoke.sprite}
+                src={this.props.pokemon.wlPoke.sprite}
               />
             </Card>
             <Card>
@@ -48,35 +63,36 @@ export default function WindowCard({ pokemon, allPokemon }) {
                 <div className='d-flex'>
                   <div>
                     <b>
-                      #{pokemon.wlPokeId} {pokemon.wlPoke.name}
+                      #{this.props.pokemon.wlPokeId}{' '}
+                      {this.props.pokemon.wlPoke.name}
                     </b>
                     <br></br>
                     <Badge
                       style={{
-                        background: HexByType[pokemon.wlPoke.type1],
+                        background: HexByType[this.props.pokemon.wlPoke.type1],
                         marginLeft: '2px',
                         margin: '2px'
                       }}
                     >
-                      {pokemon.wlPoke.type1}
+                      {this.props.pokemon.wlPoke.type1}
                     </Badge>
                     <Badge
                       style={{
-                        background: HexByType[pokemon.wlPoke.type2],
+                        background: HexByType[this.props.pokemon.wlPoke.type2],
                         marginLeft: '2px',
                         margin: '2px'
                       }}
                     >
-                      {pokemon.wlPoke.type2}
+                      {this.props.pokemon.wlPoke.type2}
                     </Badge>
                   </div>
                   <img
-                    onClick={handlePokeClick}
+                    onClick={this.handleCaught}
                     className={[
                       'ml-auto',
                       'mt-auto',
                       'mb-auto',
-                      toggleCaught()
+                      this.toggleCaught()
                     ].join(' ')}
                     src={images.pokeball}
                     width='20'
@@ -86,7 +102,7 @@ export default function WindowCard({ pokemon, allPokemon }) {
                 </div>
               </Card.Header>
               <Card.Body className='pl-2 pr-2 pb-2'>
-                <PokemonStats pokemon={pokemon.wlPoke} />
+                <PokemonStats pokemon={this.props.pokemon.wlPoke} />
                 {/* <Chevron onClick={handleDropdownClick} className={toggleDrop()} /> */}
               </Card.Body>
             </Card>
@@ -95,7 +111,11 @@ export default function WindowCard({ pokemon, allPokemon }) {
             <Accordion.Toggle as={Button} variant='link' eventKey='1'>
               <Chevron />
             </Accordion.Toggle>
-            <CollapseData idx='1' pokemon={pokemon} allPokemon={allPokemon} />
+            <CollapseData
+              idx='1'
+              pokemon={this.props.pokemon}
+              allPokemon={this.props.allPokemon}
+            />
             {/* <Accordion.Collapse eventKey='1'>
               <WindowDropdown pokemon={pokemon} />
             </Accordion.Collapse> */}
