@@ -39,7 +39,7 @@ export default function Search ({setCategory, handleSearch, update}) {
     <MDBContainer style={{display: 'flex', flexDirection: 'row' }}>
       <MDBNavbar color="amber lighten-4" style={{marginTop: '20px'}} light>
         <MDBContainer>
-          <MDBNavbarBrand style={{width: '100%', display: 'flex', justifyContent: 'flex-start'}}>
+          <MDBNavbarBrand style={{width: '100%'}}>
 
             <MDBFormInline className="md-form mb-4" style={{width: '515px', marginLeft: '-5%'}}>
               <MDBHamburgerToggler color="#007bff" id="hamburger1" onClick={()=> setCollapse1(!collapse1)} />
@@ -58,8 +58,8 @@ export default function Search ({setCategory, handleSearch, update}) {
                   </MDBCollapse>
             </MDBFormInline>
   
-            <MDBFormInline className="md-form mb-4" style={{width: '360px', position: 'relative', right: '-13rem'}}>
-              <div style={{width: '24rem', marginLeft:'3rem', marginTop: 10, display:'inline'}}>
+            <MDBFormInline className="md-form mb-4" style={{width: '360px', position: 'absolute', right: '-30rem', top: '0px'}}>
+              <div style={{width: '24rem', marginLeft:'3rem', marginTop: 10}}>
                 <div className="form-control ml-3 w-75">
                   <FaFilter/>
                   <div style={{position: 'relative', bottom: '1.95rem', left: '1.7rem'}}>
