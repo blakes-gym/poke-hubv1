@@ -1,7 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Accordion from 'react-bootstrap/Accordion';
-import { useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
 import HexByType from '../../utils/hexData';
 import PokemonStats from './PokemonStats.js';

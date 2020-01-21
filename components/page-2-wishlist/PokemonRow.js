@@ -23,7 +23,7 @@ export default function PokemonRow({ pokemonData }) {
           {pokemonData.map((pokemon, idx) => {
             return (
               <Card key={idx}>
-                <PokemonBanner idx={idx} pokemon={pokemon.wlPoke} />
+                <PokemonBanner idx={idx} pokemon={pokemon} />
                 <CollapseData
                   idx={idx}
                   pokemon={pokemon}
