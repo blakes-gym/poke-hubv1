@@ -1,7 +1,7 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radius, Legend, Tooltip } from 'recharts';
-import {useState} from 'react'
+import hexData from '../../utils/hexData';
 
-export default function StatsChart ({ stats }) {
+export default function StatsChart ({ stats, type }) {
 //   formats data for chart
 //   let pokemonStats = [];
 //   //captures maximum value for each domain
@@ -20,7 +20,7 @@ export default function StatsChart ({ stats }) {
         <PolarGrid />
         <PolarAngleAxis dataKey="value"/>
         <PolarRadiusAxis angle={30} domain={[0, 150]} />
-        <Radar name="Total" dataKey="stat" stroke="rgba(255, 159, 64)" fill="rgba(255, 159, 64)" label="true" fillOpacity={1} />
+        <Radar name="Total" dataKey="stat" stroke="black" fill={hexData[type]} label="true" fillOpacity={1} />
       </RadarChart>
     </div>
   )

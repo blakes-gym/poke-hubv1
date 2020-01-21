@@ -1,9 +1,7 @@
 import { MDBDataTable, MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader, MDBCol, MDBRow, MDBFormInline, MDBNavItem} from 'mdbreact';
-import {Form, Dropdown, Accordion, Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import {FaSearch, FaFilter} from 'react-icons/fa';
-import {Typeahead} from 'react-bootstrap-typeahead';
 import {useState} from 'react'
 
 
@@ -51,10 +49,13 @@ export default function MobileSearch ({show, compareValues, setCategory, setShow
         </MDBModalBody>
 
         <MDBModalFooter style={{borderBottom: '1px solid black'}}>
-          <Button onClick={() => handleSearch(searchInput)} variant="primary" style={{marginLeft: '5px'}}>Search</Button>   
+          <Button onClick={() => {
+            handleSearch(searchInput)
+            setShow(!show)
+          }} variant="primary" style={{marginLeft: '5px'}}>Search</Button>   
         </MDBModalFooter>
 
-        <MDBModalHeader >
+        {/* <MDBModalHeader >
           <div className="pokeNameWindow" style={{display:"flex", justifyContent: 'space-evenly', alignItems: 'center'}}>Filter BY</div>
         </MDBModalHeader>
 
@@ -94,7 +95,7 @@ export default function MobileSearch ({show, compareValues, setCategory, setShow
           setShow(!show)
         }}>Filter</Button> 
         
-        </MDBModalFooter>
+        </MDBModalFooter> */}
       </MDBModal>
   </div>
   )

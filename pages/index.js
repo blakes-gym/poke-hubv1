@@ -44,7 +44,6 @@ export default function Index({data}) {
         var query = queryString.stringify({type: types});
         axios.get(`http://localhost:4000/api/pokemon?${query}`)
           .then(({data}) => setPoke(data))
-          .catch(err => console.error(err))
       } else {
         setPoke(data)
       }
