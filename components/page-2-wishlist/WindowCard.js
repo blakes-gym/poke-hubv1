@@ -29,12 +29,10 @@ export default class WindowCard extends Component {
   }
 
   toggleCaught() {
-    console.log('hello from toggleCaught');
     return this.state.caught ? 'isCaught' : 'notCaught';
   }
 
   handleCaught() {
-    console.log(this.state.caught);
     axios
       .put(local + '/wishlist', {
         id: this.props.pokemon.id,

@@ -21,7 +21,6 @@ export default class PokemonBanner extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.pokemon);
     if (this.props.pokemon.caught === true) {
       this.setState({ caught: true });
     }
@@ -36,7 +35,6 @@ export default class PokemonBanner extends Component {
   }
 
   handleCaught() {
-    console.log(this.state.caught);
     axios
       .put(local + '/wishlist', {
         id: this.props.pokemon.wlPoke.id,

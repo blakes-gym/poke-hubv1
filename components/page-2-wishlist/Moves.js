@@ -1,6 +1,9 @@
 import { Component } from 'react';
 import moveData from '../../data/dummyData2.js';
 import NatureAndItem from './NatureAndItem.js';
+import Button from 'react-bootstrap/Button';
+import axios from 'axios';
+import { local } from '../../constants';
 
 class Moves extends Component {
   constructor(props) {
@@ -13,15 +16,28 @@ class Moves extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
-    this.setState(
-      {
-        [e.target.name]: e.target.value
-      },
-      console.log(this.state)
-    );
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
+  handleSubmit() {
+    axios
+      .put(local + '/wishlist', {
+        id: this.props.pokemon.id,
+        move1: this.state.move1,
+        move2: this.state.move2,
+        move3: this.state.move3,
+        move4: this.state.move4
+      })
+      .then(() => {
+        console.log('updated moves');
+        console.log(this.state);
+      });
   }
 
   render() {
@@ -45,8 +61,18 @@ class Moves extends Component {
             </div>
           );
         })}
+        <Button
+          variant='info'
+          onClick={this.handleSubmit}
+          className='mt-3 mb-3'
+        >
+          Update Moves
+        </Button>
         <div className='align-self-center'>
-          <NatureAndItem />
+          <NatureAndItem
+            handleChange={this.handleChange}
+            pokemon={this.props.pokemon}
+          />
         </div>
       </div>
     );

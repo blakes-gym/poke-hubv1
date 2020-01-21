@@ -48,20 +48,20 @@ class CollapseData extends Component {
   render() {
     return (
       <Accordion.Collapse eventKey={`${this.props.idx}`}>
-        <Card.Body>
+        <Card.Body className='d-flex'>
           <div className='dataContainer'>
             <PokemonStats pokemon={this.props.pokemon.wlPoke}></PokemonStats>
             <StatsGraph pokemon={this.props.pokemon.wlPoke}></StatsGraph>
-            <Moves allPokemon={this.props.allPokemon} />
+            <Moves pokemon={this.props.pokemon} />
+            <br></br>
+            <Button
+              variant='danger'
+              onClick={this.handleRemove}
+              name={this.props.pokemon.id}
+            >
+              Remove {this.props.pokemon.wlPoke.name}
+            </Button>
           </div>
-          <Button
-            variant='danger'
-            block
-            onClick={this.handleRemove}
-            name={this.props.pokemon.id}
-          >
-            Remove {this.props.pokemon.wlPoke.name}
-          </Button>
         </Card.Body>
       </Accordion.Collapse>
     );
