@@ -9,8 +9,9 @@ import images from '../../utils/imageUrls.js';
 import Chevron from '../Chevron.js';
 import Button from 'react-bootstrap/Button';
 import WindowDropdown from './WindowDropdown.js';
+import CollapseData from './CollapseData.js';
 
-export default function WindowCard({ pokemon }) {
+export default function WindowCard({ pokemon, allPokemon }) {
   const [caught, setCaught] = useState(false);
   const [drop, setDrop] = useState(false);
 
@@ -94,9 +95,10 @@ export default function WindowCard({ pokemon }) {
             <Accordion.Toggle as={Button} variant='link' eventKey='1'>
               <Chevron />
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey='1'>
-              <WindowDropdown pokemon={pokemon.wlPoke} />
-            </Accordion.Collapse>
+            <CollapseData idx='1' pokemon={pokemon} allPokemon={allPokemon} />
+            {/* <Accordion.Collapse eventKey='1'>
+              <WindowDropdown pokemon={pokemon} />
+            </Accordion.Collapse> */}
           </Card>
         </Accordion>
       </div>

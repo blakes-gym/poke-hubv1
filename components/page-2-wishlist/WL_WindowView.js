@@ -23,6 +23,7 @@ export default function WL_WindowView({ pokemonData }) {
                 pokemonOne={pokemonData[index - 1]}
                 pokemonTwo={pokemonData[index]}
                 key={index}
+                allPokemon={pokemonData}
               />
             );
           }
@@ -33,6 +34,7 @@ export default function WL_WindowView({ pokemonData }) {
               <CardRow
                 pokemonOne={pokemonData[pokemonData.length - 1]}
                 key={pokemonData.length - 1}
+                allPokemon={pokemonData}
               />
             );
           }
