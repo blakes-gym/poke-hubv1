@@ -13,16 +13,29 @@ class NatureAndItem extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
+    console.log(e.target.name);
+    console.log(e.target.value);
+    this.setState(
+      {
+        [e.target.name]: e.target.value
+      },
+      () => console.log(this.state)
+    );
   }
 
   handleSubmit() {
-    // axios.put(local + '/wishlist', { id: this.props.pokemon.id });
+    axios
+      .put(local + '/wishlist', {
+        id: this.props.pokemon.id,
+        nature: this.state.nature,
+        item: this.state.item
+      })
+      .then(() => alert('Updated nature and item!'))
+      .catch(err => console.log('err in PUT', err));
   }
 
   render() {
@@ -35,13 +48,11 @@ class NatureAndItem extends Component {
               <select
                 onChange={this.handleChange}
                 className='align-self-center justify-content-center'
+                name='nature'
+                value={this.state.nature}
               >
                 {additionalData.natures.map((nature, index) => {
-                  return (
-                    <option name='nature' key={index}>
-                      {nature}
-                    </option>
-                  );
+                  return <option key={index}>{nature}</option>;
                 })}
               </select>
             </form>
@@ -52,10 +63,12 @@ class NatureAndItem extends Component {
               <select
                 onChange={this.handleChange}
                 className='align-self-center justify-content-center'
+                name='item'
+                value={this.state.item}
               >
                 {additionalData.items.map((item, index) => {
                   return (
-                    <option name='item' key={index}>
+                    <option value={item} key={index}>
                       {item}
                     </option>
                   );

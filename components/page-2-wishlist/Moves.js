@@ -9,10 +9,10 @@ class Moves extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      move1: null,
-      move2: null,
-      move3: null,
-      move4: null
+      move1: 'Select a move',
+      move2: 'Select a move',
+      move3: 'Select a move',
+      move4: 'Select a move'
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -35,7 +35,7 @@ class Moves extends Component {
         move4: this.state.move4
       })
       .then(() => {
-        console.log('updated moves');
+        alert('Updated moves!');
         console.log(this.state);
       });
   }
@@ -48,7 +48,11 @@ class Moves extends Component {
           return (
             <div key={index} className='p-2 align-self-center'>
               <form>
-                <select name={moveNo} onChange={this.handleChange}>
+                <select
+                  value={this.state[`${moveNo}`]}
+                  name={moveNo}
+                  onChange={this.handleChange}
+                >
                   {moveData.moves.map((moveDetails, index) => {
                     return (
                       <option value={moveDetails.move} key={index}>
