@@ -3,13 +3,12 @@ import hexData from '../../utils/hexDataDerick';
 import Search from './Search.js';
 import { MDBDataTable, MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader, MDBCol, MDBRow} from 'mdbreact';
 import typeImages from '../../utils/typeImages';
-import {FaAngleDown, FaAngleUp} from 'react-icons/fa';
-import {useState, useRef, useEffect} from 'react';
+import {useState} from 'react';
 import Modal from './Modal.js';
+import colors from '../../utils/hexData';
 
 
-
-export default function Window ({pokemon, compareValues, setCategory}) {
+export default function Window ({handleSearch, pokemon, compareValues, setCategory}) {
   const [show, setShow] = useState(false)
   const [info, setInfo] = useState('')
   // const [poke, setPoke] = useState(pokemon)
@@ -60,12 +59,27 @@ export default function Window ({pokemon, compareValues, setCategory}) {
   // };
   
 
-
+  const Type = ({ type }) => {
+    return (
+      <div
+        style={{
+          background: colors[type] + 'd',
+          width: 60,
+          paddingTop: 2,
+          paddingBottom: 2,
+          borderRadius: 4
+        }}
+        className="border border-white shadow-sm"
+      >
+        {type}
+      </div>
+    )
+  }
 
 
   return (
     <div className="d-none d-sm-block overflowY">
-      <Search compareValues={compareValues} setCategory={setCategory}/>
+      <Search handleSearch={handleSearch} compareValues={compareValues} setCategory={setCategory}/>
       <Table bordered hover style={{cursor: 'pointer'}}>
           <thead className="thead-dark" style={{fontSize: '14px', cursor: 'default'}}>
             <tr>
@@ -90,14 +104,20 @@ export default function Window ({pokemon, compareValues, setCategory}) {
                   <td style={{width:'5%', borderLeftStyle:'none', borderRightStyle: 'none'}}><img style={{height:'2rem', width: '2rem'}} src={pokemon.icon}></img></td>
                   <td style={{width:'10%'}}>{pokemon.name}</td>
                   <td style={{width:'10%'}}>
-                    { pokemon.type2 ? (
+                  <Type type={pokemon.type1} />
+                    {pokemon.type2 && (
+                      <div>
+                        <Type type={pokemon.type2} />
+                      </div>
+                    )}
+                    {/* { pokemon.type2 ? (
                       <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                         <img src={typeImages[pokemon.type1]} style={{width: '30%'}}/>
                         <img src={typeImages[pokemon.type2]} style={{width: '30%'}}/>
                       </div>
                     ) : (
                       <img src={typeImages[pokemon.type1]} style={{width: '30%'}}/>
-                    )}
+                    )} */}
                   </td>
                   <td style={{width:'10%'}}>{pokemon.hp}</td>
                   <td style={{width:'10%'}}>{pokemon.atk}</td>
