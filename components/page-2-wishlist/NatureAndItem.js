@@ -17,14 +17,9 @@ class NatureAndItem extends Component {
   }
 
   handleChange(e) {
-    console.log(e.target.name);
-    console.log(e.target.value);
-    this.setState(
-      {
-        [e.target.name]: e.target.value
-      },
-      () => console.log(this.state)
-    );
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   }
 
   handleSubmit() {
