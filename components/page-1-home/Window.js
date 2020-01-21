@@ -11,9 +11,6 @@ import colors from '../../utils/hexData';
 export default function Window ({handleSearch, pokemon, compareValues, setCategory}) {
   const [show, setShow] = useState(false)
   const [info, setInfo] = useState('')
-  // const [poke, setPoke] = useState(pokemon)
-  // const [category, setCategory] = useState('')
-
 
   const handleShow = (pokemon, stats) => {
     setInfo({
@@ -24,40 +21,6 @@ export default function Window ({handleSearch, pokemon, compareValues, setCatego
       setShow(!show)
     } 
   }
-
-  // useEffect(() => {
-  //   setPoke(poke.sort(compareValues(category.input, category.direction)));
-  // }, [category, poke])
-
-  // const handleCategory = (key, order='asc') => {
-  //   setCategory({
-  //     type: key,
-  //     direction: order
-  //   });
-  // }
-
-
-  // useEffect(() => {
-  //   setPoke(poke.sort(compareValues(category.input, category.direction)));
-  // }, [category, poke])
-  // function compareValues(key, order = 'asc') {
-  //   return function innerSort(a, b) {
-
-  //     const varA = (typeof a[key] === 'string') ? a[key].toUpperCase() : a[key];
-  //     const varB = (typeof b[key] === 'string') ? b[key].toUpperCase() : b[key];
-
-  //     let comparison = 0;
-  //     if (varA > varB) {
-  //       comparison = 1;
-  //     } else if (varA < varB) {
-  //       comparison = -1;
-  //     }
-  //     return (
-  //       (order === 'desc') ? (comparison * -1) : comparison
-  //     );
-  //   };
-  // };
-  
 
   const Type = ({ type }) => {
     return (
