@@ -74,11 +74,11 @@ export default function Search ({setCategory, handleSearch, update}) {
                 <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                   <div className="form-check">
                     <input name="ascending" className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" onClick={() => setFilter('asc')}/>
-                    <label className="form-check-label" for="exampleRadios2">Lowest</label>
+                    <label className="form-check-label" htmlFor="exampleRadios2">Lowest</label>
                   </div>
                   <div className="form-check">
                     <input name="descending" className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option1" onClick={() => setFilter('desc')}/>
-                    <label className="form-check-label" for="exampleRadios2"> Highest</label>
+                    <label className="form-check-label" htmlFor="exampleRadios2"> Highest</label>
                   </div>
                 </div>
               </div>
