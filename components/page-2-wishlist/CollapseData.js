@@ -41,6 +41,9 @@ class CollapseData extends Component {
     console.log('BEFORE', this.state);
     axios
       .delete(local + `/wishlist/${e.target.name}`)
+      .then(() =>
+        alert(`Removed from wishlist. Please refresh to see your changes!`)
+      )
       .then(() => this.getWishlist())
       .catch(err => console.log('err in DELETE', err));
   }
