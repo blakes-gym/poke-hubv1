@@ -1,25 +1,20 @@
-import { MDBDataTable, MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader, MDBCol, MDBRow} from 'mdbreact';
+import {MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader, MDBCol, MDBRow} from 'mdbreact';
 import StatsChart from './StatsChart.js';
 import axios from 'axios';
-import {server} from '../../constants/index.js';
 
 
 export default function Modal ({show, stats, pokemon, setShow}) {
+  const local = 'http://localhost:4000/api'
 
   const handleAdd = () => {
-    axios    
-    .post('/wishlist', pokemon)
-    .then(data => console.log(data))
-    .catch(err => console.log('err in PUT', err));
-  }
-
-  const handleDelete = () => {
     axios
-    .delete(`/wishlist/${pokemon.id}`)
-    .then(() => console.log('delete successful'))
-    .catch((err) => console.log('delete unsuccessful', err))
-  }
-  
+      .post(local + '/wishlist', { wlPokeId: pokemon.id })
+      .then(data => console.log('success'))
+      .catch(err => console.log('err in post'));
+    setShow(!show)
+    alert(`${pokemon.name} has been added to you wishlist!`);
+  };
+
   return (
     <MDBModal isOpen={show} fullHeight="true">
       <MDBModalHeader >
@@ -30,7 +25,7 @@ export default function Modal ({show, stats, pokemon, setShow}) {
         </div>
         </MDBModalHeader>
       <MDBModalBody style={{display: 'flex'}}>
-        <StatsChart stats={stats} />
+        <StatsChart stats={stats} type={pokemon.type1} />
         <MDBContainer style={{textAlign: 'left', marginTop: '0%'}}>
           {stats.map((stat, index) => (
             <MDBRow className="modalRow">
@@ -45,8 +40,7 @@ export default function Modal ({show, stats, pokemon, setShow}) {
         </MDBContainer>
       </MDBModalBody>
       <MDBModalFooter>
-        <MDBBtn color="secondary" style={{left: '-50%'}} onClick={() => setShow(!show)}>Close</MDBBtn>
-        <MDBBtn color="danger" onClick={handleDelete}>Remove</MDBBtn>
+        <MDBBtn color="secondary" style={{right: '70%'}} onClick={() => setShow(!show)}>Close</MDBBtn>
         <MDBBtn color="success" onClick={handleAdd}>Add</MDBBtn>
       </MDBModalFooter>
     </MDBModal>
