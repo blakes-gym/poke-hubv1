@@ -60,5 +60,8 @@
     "react-typeahead": "^2.0.0-alpha.8",
     "react-with-gesture": "^4.0.8",
     "recharts": "^2.0.0-beta.1"
+  },
+  "engines": {
+    "node": ">=12"
   }
 }
