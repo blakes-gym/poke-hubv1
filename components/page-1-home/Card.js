@@ -5,7 +5,6 @@ import Stats from './Stats';
 import { FaArrowRight } from 'react-icons/fa';
 // import { GoGraph } from 'react-icons/go';
 import axios from 'axios';
-import Julian from '../PikaJulian'
 
 
 export default function Card ({pokemon}) {
