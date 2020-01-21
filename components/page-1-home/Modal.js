@@ -28,7 +28,7 @@ export default function Modal ({show, stats, pokemon, setShow}) {
         <StatsChart stats={stats} type={pokemon.type1} />
         <MDBContainer style={{textAlign: 'left', marginTop: '0%'}}>
           {stats.map((stat, index) => (
-            <MDBRow className="modalRow">
+            <MDBRow key={index} className="modalRow">
               <MDBCol md="7">{stat.value}</MDBCol>
               <MDBCol md="4">{stat.stat}</MDBCol>
             </MDBRow>

@@ -50,7 +50,9 @@ export default function Card ({pokemon}) {
           <FaArrowRight size='2rem' style={{position: 'absolute', right: '1%', top: '40%'}}/>
         </animated.div>
       </animated.div>
-      <img onClick={handleAdd} src='https://i.imgur.com/4Nnb5T5.png' style={{position: 'absolute', zIndex: 5, width:'15%', right: 0, top: 0, opacity: `${(delta[0] > 0) ? 1 : 0}`, transition: '2s'}}/>
+      {/* <Julian onClick={handleAdd} style={{position: 'absolute', zIndex: 5, width:'15%', right: 0, top: 0, opacity: `${(delta[0] > 0) ? 1 : 0}`, transition: '2s'}}/> */}
+
+      <img onClick={handleAdd} src='https://i.imgur.com/JHjpCEa.png' style={{position: 'absolute', zIndex: 5, width:'15%', right: 0, top: 0, opacity: `${(delta[0] > 0) ? 1 : 0}`, transition: '2s'}}/>
     </div>
   )
 }
