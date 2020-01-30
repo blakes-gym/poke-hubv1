@@ -36,7 +36,6 @@ class Moves extends Component {
       })
       .then(() => {
         alert('Updated moves!');
-        console.log(this.state);
       });
   }
 

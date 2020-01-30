@@ -23,22 +23,13 @@ class CollapseData extends Component {
     let res = fetch(local + '/wishlist')
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         this.setState({ wishlist: data });
       });
-    // axios
-    //   .get(local + '/wishlist')
-    //   .then(({ data }) => {
-    //     this.setState({ wishlist: data });
-    //   })
-    //   .then(() => console.log('AFTER', this.state))
-    //   .catch(err => console.log('err in GET', err));
   }
 
   handleRemove(e) {
     // remove pokemon from wishlist on click
     // update the database to false then re-render list of pokemon
-    console.log('BEFORE', this.state);
     axios
       .delete(local + `/wishlist/${e.target.name}`)
       .then(() =>
@@ -72,46 +63,3 @@ class CollapseData extends Component {
 }
 
 export default CollapseData;
-
-// export default function CollapseData({ allPokemon, pokemon, idx }) {
-//   const [wishlist, setCurrWishlist] = useState(allPokemon);
-
-//   function getWishlist() {
-//     axios
-//       .get(local + '/wishlist')
-//       .then(data => setCurrWishlist(data))
-//       .then(() => console.log(`Here's your current wishlist: ${wishlist}`));
-//   }
-
-//   function handleRemove(pokemonObj) {
-//     // remove pokemon from wishlist on click
-//     // update the database to false then re-render list of pokemon
-//     return function(e) {
-//       console.log('remove ', pokemonObj);
-//       axios
-//         .delete(local + `/wishlist/${pokemonObj.id}`)
-//         .then(() => getWishlist())
-//         .catch(err => console.log('err in DELETE', err));
-//     };
-//   }
-
-//   return (
-//     <Accordion.Collapse eventKey={`${idx}`}>
-//       <Card.Body>
-//         <div className='dataContainer'>
-//           <PokemonStats pokemon={pokemon.wlPoke}></PokemonStats>
-//           <StatsGraph pokemon={pokemon.wlPoke}></StatsGraph>
-//           <Moves allPokemon={allPokemon} />
-//         </div>
-//         <Button
-//           variant='danger'
-//           block
-//           onClick={handleRemove(pokemon)}
-//           name={pokemon.wlPoke.name}
-//         >
-//           Remove {pokemon.wlPoke.name}
-//         </Button>
-//       </Card.Body>
-//     </Accordion.Collapse>
-//   );
-// }

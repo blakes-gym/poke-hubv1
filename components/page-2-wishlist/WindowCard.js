@@ -39,7 +39,6 @@ export default class WindowCard extends Component {
         caught: !this.state.caught
       })
       .then(() => {
-        console.log('updated bool!');
         this.setState({ caught: !this.state.caught });
       });
   }
