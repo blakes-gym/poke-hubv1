@@ -26,10 +26,10 @@ export default function Matchup(props) {
           </tr>
           <tr>
             <th>Type</th>
-            <th>Stronk</th>
-            <th>Wik</th>
-            <th>Stronk</th>
-            <th>Wik</th>
+            <th>Strong</th>
+            <th>Weak</th>
+            <th>Strong</th>
+            <th>Weak</th>
           </tr>
         </thead>
         <tbody>
