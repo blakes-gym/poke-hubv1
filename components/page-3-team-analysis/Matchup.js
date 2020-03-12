@@ -10,7 +10,7 @@ export default function Matchup(props) {
   const types2 = team.map(({ type2 }) => type2).filter(type => !!type)
   const types = [...types1, ...types2]
   return (
-    <div className="my-5">
+    <div className="mt-5 pb-5">
       <Table
         size="sm"
         className="text-center mx-auto shadow"
